@@ -20,7 +20,7 @@ public class CameraZoneController : MonoBehaviour
 
     void ResetCameras()
     {
-        var cameras = FindObjectsOfType<CinemachineCamera>();
+        var cameras = FindObjectsByType<CinemachineCamera>();
         foreach (var cam in cameras)   
         {
             cam.Priority = 0;
