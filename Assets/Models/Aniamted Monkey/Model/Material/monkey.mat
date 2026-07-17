@@ -103,11 +103,11 @@ Material:
     - _Metallic: 0.1
     - _Mode: 1
     - _OcclusionStrength: 1
-    - _OutlineWidth: 0.0005
+    - _OutlineWidth: 0.0015
     - _Parallax: 0.02
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _RimStep: 0.342
+    - _RimStep: 0
     - _RimStepSmooth: 0
     - _ShadowStep: 0
     - _ShadowStepSmooth: 0
@@ -127,7 +127,7 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _OutlineColor: {r: 0.9811321, g: 0.9395375, b: 0.8284087, a: 1}
+    - _OutlineColor: {r: 0.94609153, g: 0.81109864, b: 0, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
