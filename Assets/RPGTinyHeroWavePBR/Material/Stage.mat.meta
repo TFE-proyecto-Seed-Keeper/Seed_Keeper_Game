@@ -1,15 +1,8 @@
 fileFormatVersion: 2
-guid: f2c23294678c47341aa7ffec8a34162a
+guid: 76de7fe0d4609694dac330bb3ef77a6b
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 228701
-  packageName: RPG Tiny Hero Wave PBR
-  packageVersion: 1.0
-  assetPath: Assets/RPGTinyHeroWavePBR/Material/Stage.mat
-  uploadId: 747417
