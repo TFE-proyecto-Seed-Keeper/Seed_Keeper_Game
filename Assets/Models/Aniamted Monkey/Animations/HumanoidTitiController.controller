@@ -59,7 +59,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TitiiController
+  m_Name: HumanoidTitiController
   serializedVersion: 6
   m_AnimatorParameters:
   - m_Name: Speed
@@ -168,7 +168,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 9cf8ca57734b5644a93f718ac55f6ab0, type: 2}
+    m_Motion: {fileID: 1827226128182048838, guid: 532b01cdb8a5edc409dce2979cb662ff, type: 3}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -176,7 +176,7 @@ BlendTree:
     m_DirectBlendParameter: Speed
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 2d45b76ab102b6840b6092d0eb147b9a, type: 2}
+    m_Motion: {fileID: 1827226128182048838, guid: 5b6bc10107604e64088c3465aafa788c, type: 3}
     m_Threshold: 1.5
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -184,7 +184,7 @@ BlendTree:
     m_DirectBlendParameter: Speed
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 212c4260d6101f74494d3f02c748ba71, type: 2}
+    m_Motion: {fileID: 1827226128182048838, guid: 9b51b4654bdd84a4ea4c102122008b44, type: 3}
     m_Threshold: 3
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
