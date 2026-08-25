@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: monkey
-    second: {fileID: 2100000, guid: 6f765b48c56c00848a83efe52b9e1337, type: 2}
+    second: {fileID: 2100000, guid: eac9fddc4fa171940b447c56c31e1090, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

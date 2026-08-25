@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Titi_Cola_Mask
+  m_Mask: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: root
+    m_Weight: 0
+  - m_Path: root/root Footsteps
+    m_Weight: 0
+  - m_Path: root/root Pelvis
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root L Thigh
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root L Thigh/root L Calf
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root L Thigh/root L Calf/root L Foot
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root L Thigh/root L Calf/root L Foot/root L Toe0
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root L Thigh/root L Calf/root L Foot/root L Toe0/root
+      L Toe0Nub
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root R Thigh
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root R Thigh/root R Calf
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root R Thigh/root R Calf/root R Foot
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root R Thigh/root R Calf/root R Foot/root R Toe0
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root R Thigh/root R Calf/root R Foot/root R Toe0/root
+      R Toe0Nub
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root Spine
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root Spine/root Spine1
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root Spine/root Spine1/root L Clavicle
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root Spine/root Spine1/root L Clavicle/root L UpperArm
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root Spine/root Spine1/root L Clavicle/root L UpperArm/root
+      L Forearm
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root Spine/root Spine1/root L Clavicle/root L UpperArm/root
+      L Forearm/root L Hand
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root Spine/root Spine1/root L Clavicle/root L UpperArm/root
+      L Forearm/root L Hand/root L Finger0
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root Spine/root Spine1/root L Clavicle/root L UpperArm/root
+      L Forearm/root L Hand/root L Finger0/root L Finger01
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root Spine/root Spine1/root L Clavicle/root L UpperArm/root
+      L Forearm/root L Hand/root L Finger0/root L Finger01/root L Finger0Nub
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root Spine/root Spine1/root L Clavicle/root L UpperArm/root
+      L Forearm/root L Hand/root L Finger1
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root Spine/root Spine1/root L Clavicle/root L UpperArm/root
+      L Forearm/root L Hand/root L Finger1/root L Finger11
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root Spine/root Spine1/root L Clavicle/root L UpperArm/root
+      L Forearm/root L Hand/root L Finger1/root L Finger11/root L Finger1Nub
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root Spine/root Spine1/root L Clavicle/root L UpperArm/root
+      L Forearm/root L Hand/root L Finger2
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root Spine/root Spine1/root L Clavicle/root L UpperArm/root
+      L Forearm/root L Hand/root L Finger2/root L Finger21
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root Spine/root Spine1/root L Clavicle/root L UpperArm/root
+      L Forearm/root L Hand/root L Finger2/root L Finger21/root L Finger2Nub
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root Spine/root Spine1/root Neck
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root Spine/root Spine1/root Neck/root Head
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root Spine/root Spine1/root Neck/root Head/root HeadNub
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root Spine/root Spine1/root R Clavicle
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root Spine/root Spine1/root R Clavicle/root R UpperArm
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root Spine/root Spine1/root R Clavicle/root R UpperArm/root
+      R Forearm
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root Spine/root Spine1/root R Clavicle/root R UpperArm/root
+      R Forearm/root R Hand
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root Spine/root Spine1/root R Clavicle/root R UpperArm/root
+      R Forearm/root R Hand/root R Finger0
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root Spine/root Spine1/root R Clavicle/root R UpperArm/root
+      R Forearm/root R Hand/root R Finger0/root R Finger01
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root Spine/root Spine1/root R Clavicle/root R UpperArm/root
+      R Forearm/root R Hand/root R Finger0/root R Finger01/root R Finger0Nub
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root Spine/root Spine1/root R Clavicle/root R UpperArm/root
+      R Forearm/root R Hand/root R Finger1
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root Spine/root Spine1/root R Clavicle/root R UpperArm/root
+      R Forearm/root R Hand/root R Finger1/root R Finger11
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root Spine/root Spine1/root R Clavicle/root R UpperArm/root
+      R Forearm/root R Hand/root R Finger1/root R Finger11/root R Finger1Nub
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root Spine/root Spine1/root R Clavicle/root R UpperArm/root
+      R Forearm/root R Hand/root R Finger2
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root Spine/root Spine1/root R Clavicle/root R UpperArm/root
+      R Forearm/root R Hand/root R Finger2/root R Finger21
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root Spine/root Spine1/root R Clavicle/root R UpperArm/root
+      R Forearm/root R Hand/root R Finger2/root R Finger21/root R Finger2Nub
+    m_Weight: 0
+  - m_Path: root/root Pelvis/root Tail
+    m_Weight: 1
+  - m_Path: root/root Pelvis/root Tail/root Tail1
+    m_Weight: 1
+  - m_Path: root/root Pelvis/root Tail/root Tail1/root Tail2
+    m_Weight: 1
+  - m_Path: root/root Pelvis/root Tail/root Tail1/root Tail2/root Tail3
+    m_Weight: 1
+  - m_Path: root/root Pelvis/root Tail/root Tail1/root Tail2/root Tail3/root TailNub
+    m_Weight: 1
+  - m_Path: Titi_Monkey
+    m_Weight: 0

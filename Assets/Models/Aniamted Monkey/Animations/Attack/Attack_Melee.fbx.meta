@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 472d17ee18ef002408f5705ab3d3df35
+guid: bdf3622221c36bd468d1c782dc09dc1a
 ModelImporter:
   serializedVersion: 24501
   internalIDToNameTable: []
@@ -18,11 +18,7 @@ ModelImporter:
     removeConstantScaleCurves: 0
     motionNodeName: 
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
-      might lower retargeting quality:\n\t'root L Finger1' has translation animation
-      that will be discarded.\n\t'root L Finger1' has scale animation that will be
-      discarded.\n\t'root L Finger11' has translation animation that will be discarded.\n\t'root
-      L Finger11' has scale animation that will be discarded.\n"
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -36,11 +32,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Run_Monkey
+      name: Attack_Monkey_Melee
       takeName: Take 001
       internalID: 1827226128182048838
       firstFrame: 0
-      lastFrame: 19
+      lastFrame: 28
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -385,258 +381,258 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: Run(Clone)
+    - name: Attack_Melee(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
-      rotation: {x: -0.7071063, y: 0.00085120695, z: 0.00085120695, w: 0.7071063}
+      rotation: {x: -0.14776316, y: -0.014571401, z: -0.088553175, w: 0.9849427}
       scale: {x: 1, y: 1, z: 1}
     - name: root
-      parentName: Run(Clone)
-      position: {x: 0.000003744615, y: 0.21834253, z: -0.000050598745}
-      rotation: {x: -0.1472046, y: 0.1490805, z: 0.6907437, w: 0.69208306}
-      scale: {x: 0.99999994, y: 0.9999999, z: 0.9999999}
+      parentName: Attack_Melee(Clone)
+      position: {x: 0.0002635848, y: 0.173, z: -0.015546162}
+      rotation: {x: -0.4241248, y: 0.35542688, z: 0.6398881, w: 0.53322893}
+      scale: {x: 0.9999999, y: 0.99999994, z: 0.99999994}
     - name: root Footsteps
       parentName: root
-      position: {x: -0.15935093, y: -0.00042063653, z: -0.07157035}
-      rotation: {x: -0.38528726, y: 0.3830137, z: -0.5938455, w: 0.5934659}
-      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+      position: {x: -0.06278566, y: 0.029450491, z: -0.14952575}
+      rotation: {x: -0.077148266, y: 0.20114443, z: -0.70379394, w: 0.67695135}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
     - name: root Pelvis
       parentName: root
-      position: {x: -0.28409484, y: 0.00045531994, z: 0.09961389}
-      rotation: {x: -0.58964634, y: 0.39027834, z: 0.39027834, w: 0.58964634}
-      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+      position: {x: -0.05446237, y: 0.03122906, z: 0.10587877}
+      rotation: {x: 0.5, y: -0.5, z: -0.5, w: -0.5}
+      scale: {x: 0.99999994, y: 1.0000001, z: 1.0000001}
     - name: root Spine
       parentName: root Pelvis
-      position: {x: -0.050175957, y: -0.00004543085, z: -0.0050936462}
+      position: {x: -0.050420493, y: -0.0000489614, z: 0.000001441288}
       rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 0.9999998, y: 1, z: 0.9999999}
+      scale: {x: 1.0000002, y: 1, z: 1.0000002}
     - name: root Spine1
       parentName: root Spine
-      position: {x: -0.06193253, y: -0.00007598858, z: -0.00000004622303}
+      position: {x: -0.06201965, y: -0.00006417971, z: 0.000013277411}
       rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1.0000017, y: 1.0000014, z: 1.000001}
+      scale: {x: 0.9999998, y: 0.9999998, z: 1}
     - name: root Neck
       parentName: root Spine1
-      position: {x: -0.104853675, y: -0.00040450535, z: 0.0000041262924}
+      position: {x: -0.10484062, y: -0.00040455378, z: 0.00000037546158}
       rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 0.9999998, y: 1, z: 1}
+      scale: {x: 1.0000001, y: 1.0000004, z: 0.9999999}
     - name: root Head
       parentName: root Neck
-      position: {x: -0.04666389, y: 0, z: 0}
+      position: {x: -0.046663865, y: -0.000000012111664, z: -0.000000006055832}
       rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1.0000001, y: 0.9999999, z: 1.0000001}
+      scale: {x: 1.0000006, y: 1.0000004, z: 1.0000004}
     - name: root HeadNub
       parentName: root Head
-      position: {x: -0.1531798, y: 0.000000024223327, z: -0.000000001513958}
+      position: {x: -0.15317982, y: 0, z: -5.6773425e-10}
       rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
     - name: root R Clavicle
       parentName: root Spine1
-      position: {x: -0.08764712, y: -0.019953215, z: -0.06217651}
+      position: {x: -0.08764712, y: -0.019953215, z: -0.062176503}
       rotation: {x: 0.7071068, y: -0.000000030908623, z: 0.7071068, w: -0.000000030908623}
-      scale: {x: 1.0000004, y: 1, z: 1.0000002}
+      scale: {x: 1.0000008, y: 1.0000006, z: 1.000001}
     - name: root R UpperArm
       parentName: root R Clavicle
-      position: {x: -0.06502054, y: 0, z: 0}
+      position: {x: -0.06502053, y: 0.000000024223327, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1.000001, y: 1.0000001, z: 0.99999994}
+      scale: {x: 0.99999994, y: 1.0000002, z: 1}
     - name: root R Forearm
       parentName: root R UpperArm
-      position: {x: -0.10944374, y: 0, z: -0.000000024223327}
+      position: {x: -0.109443754, y: 0, z: 0.000000024223327}
       rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1, y: 1, z: 1.0000002}
+      scale: {x: 1.0000001, y: 1.0000005, z: 1.0000004}
     - name: root R Hand
       parentName: root R Forearm
-      position: {x: -0.087944016, y: 0, z: 0.000000048446655}
+      position: {x: -0.08794404, y: -0.000000012111664, z: -0.000000024223327}
       rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-      scale: {x: 1, y: 1.0000004, z: 0.9999998}
+      scale: {x: 1.0000004, y: 0.99999994, z: 0.9999998}
     - name: root R Finger0
       parentName: root R Hand
-      position: {x: -0.037880827, y: 0.024437219, z: 0.0216379}
+      position: {x: -0.037880845, y: 0.024437208, z: 0.021637911}
       rotation: {x: 0, y: 0.38268346, z: 0, w: 0.9238795}
-      scale: {x: 0.9999996, y: 1.0000001, z: 1}
+      scale: {x: 0.9999997, y: 1.0000001, z: 0.99999994}
     - name: root R Finger01
       parentName: root R Finger0
-      position: {x: -0.032142725, y: 0.000000024223327, z: -0.000000012111664}
+      position: {x: -0.032142695, y: 0, z: 0.000000006055832}
       rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1.0000001, y: 0.9999998, z: 1.0000002}
+      scale: {x: 0.99999994, y: 1.0000001, z: 0.9999997}
     - name: root R Finger0Nub
       parentName: root R Finger01
-      position: {x: -0.03893591, y: 0, z: 0.000000012111664}
+      position: {x: -0.038935903, y: 0, z: -0.000000006055832}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: -1, y: -1, z: -1.0000001}
     - name: root R Finger1
       parentName: root R Hand
-      position: {x: -0.097979, y: 0.0001013504, z: 0.020497331}
+      position: {x: -0.09797901, y: 0.0001013504, z: 0.020497344}
       rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1.0000004, y: 1.0000001, z: 1}
+      scale: {x: 1.0000001, y: 1.0000006, z: 1}
     - name: root R Finger11
       parentName: root R Finger1
-      position: {x: -0.033476777, y: -0.000000024223327, z: 0}
+      position: {x: -0.03347676, y: -0.000000006055832, z: -0.000000012111664}
       rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 0.99999994, y: 1, z: 0.9999997}
+      scale: {x: 0.99999994, y: 0.9999998, z: 1.0000001}
     - name: root R Finger1Nub
       parentName: root R Finger11
-      position: {x: -0.033476748, y: 0, z: -0.000000012111664}
+      position: {x: -0.033476755, y: 0, z: 0.000000012111664}
       rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: -0.99999994, y: -0.99999994, z: -1}
+      scale: {x: -1, y: -0.99999994, z: -1}
     - name: root R Finger2
       parentName: root R Hand
-      position: {x: -0.084766805, y: -0.0036627124, z: -0.006185269}
+      position: {x: -0.084766835, y: -0.0036627124, z: -0.006185257}
       rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1, y: 1.0000002, z: 1.0000006}
+      scale: {x: 1.0000007, y: 1.0000007, z: 1.000001}
     - name: root R Finger21
       parentName: root R Finger2
-      position: {x: -0.037012167, y: -0.000000024223327, z: 0.000000012111664}
+      position: {x: -0.03701219, y: 0, z: -0.000000012111664}
       rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1, y: 1.0000001, z: 1.0000002}
+      scale: {x: 0.9999998, y: 0.9999998, z: 1}
     - name: root R Finger2Nub
       parentName: root R Finger21
-      position: {x: -0.029454814, y: -0.000000024223327, z: -0.000000012111664}
+      position: {x: -0.02945479, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: -1, y: -1, z: -1}
+      scale: {x: -0.9999999, y: -0.99999994, z: -1}
     - name: root L Clavicle
       parentName: root Spine1
-      position: {x: -0.087647095, y: -0.019953566, z: 0.062176395}
+      position: {x: -0.08764715, y: -0.019953554, z: 0.062176406}
       rotation: {x: 0.7071068, y: -0.000000030908623, z: -0.7071068, w: 0.000000030908623}
-      scale: {x: 1, y: 1.0000004, z: 1.0000005}
+      scale: {x: 1, y: 1, z: 1.0000001}
     - name: root L UpperArm
       parentName: root L Clavicle
-      position: {x: -0.06502053, y: 0, z: 0}
+      position: {x: -0.06502053, y: 0.000000024223327, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1.0000004, y: 0.99999994, z: 0.99999934}
+      scale: {x: 0.9999998, y: 1.0000001, z: 1.0000002}
     - name: root L Forearm
       parentName: root L UpperArm
-      position: {x: -0.10944374, y: 0.000000012111664, z: 0}
+      position: {x: -0.109443754, y: 0, z: -0.000000012111664}
       rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1.0000002, y: 0.99999994, z: 1.0000001}
+      scale: {x: 1.0000001, y: 1.0000006, z: 1.0000002}
     - name: root L Hand
       parentName: root L Forearm
-      position: {x: -0.08794404, y: 0, z: 0}
+      position: {x: -0.087944046, y: 0.000000012111664, z: 0.000000012111664}
       rotation: {x: 0.7071068, y: 0, z: 0, w: -0.7071068}
-      scale: {x: 1.0000002, y: 1.0000008, z: 0.9999997}
+      scale: {x: 1.0000002, y: 0.99999994, z: 0.9999997}
     - name: root L Finger0
       parentName: root L Hand
-      position: {x: -0.037880827, y: 0.024437208, z: -0.021637887}
+      position: {x: -0.037880834, y: 0.024437219, z: -0.021637887}
       rotation: {x: 0, y: 0.3826835, z: 0, w: -0.9238795}
-      scale: {x: 1.0000001, y: 1, z: 1.0000006}
+      scale: {x: 0.9999997, y: 1, z: 1.0000001}
     - name: root L Finger01
       parentName: root L Finger0
-      position: {x: -0.03214271, y: 0, z: 0.000000012111664}
+      position: {x: -0.032142714, y: 0.000000024223327, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1.0000002, y: 1, z: 0.9999998}
+      scale: {x: 1, y: 1.0000001, z: 0.9999998}
     - name: root L Finger0Nub
       parentName: root L Finger01
-      position: {x: -0.0389359, y: 0, z: 0}
+      position: {x: -0.038935903, y: 0, z: -0.000000012111664}
       rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+      scale: {x: 0.99999994, y: 1, z: 1}
     - name: root L Finger1
       parentName: root L Hand
-      position: {x: 0, y: 0, z: 0}
+      position: {x: -0.09797901, y: 0.00010137462, z: -0.02049732}
       rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1.0000002, y: 1.0000008, z: 1.0000001}
+      scale: {x: 1.0000001, y: 1.0000005, z: 1.0000002}
     - name: root L Finger11
       parentName: root L Finger1
-      position: {x: 0, y: 0, z: 0}
+      position: {x: -0.03347676, y: -0.000000024223327, z: 0.000000012111664}
       rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1.0000002, y: 1.0000007, z: 1}
+      scale: {x: 1, y: 1, z: 1.0000002}
     - name: root L Finger1Nub
       parentName: root L Finger11
-      position: {x: 0, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: root L Finger2
-      parentName: root L Hand
-      position: {x: -0.08476682, y: -0.0036627124, z: 0.006185269}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1.0000005, y: 1.0000008, z: 1.0000014}
-    - name: root L Finger21
-      parentName: root L Finger2
-      position: {x: -0.037012152, y: 0, z: 0.000000012111664}
+      position: {x: -0.03347676, y: 0.000000001513958, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: root L Finger2
+      parentName: root L Hand
+      position: {x: -0.084766805, y: -0.0036626882, z: 0.006185281}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000005, y: 1.0000004, z: 1.0000008}
+    - name: root L Finger21
+      parentName: root L Finger2
+      position: {x: -0.03701218, y: 0.000000012111664, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 0.99999994, z: 1.0000001}
     - name: root L Finger2Nub
       parentName: root L Finger21
-      position: {x: -0.02945479, y: 0, z: 0.000000012111664}
+      position: {x: -0.029454779, y: -0.000000009083748, z: -0.000000006055832}
       rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
     - name: root Tail
       parentName: root Pelvis
-      position: {x: 0.0025069145, y: -0.068245605, z: 0.00026183145}
+      position: {x: 0.0025415358, y: -0.06831904, z: -0.0000008962631}
       rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1.0000006, y: 1.0000002, z: 1.0000006}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1}
     - name: root Tail1
       parentName: root Tail
-      position: {x: -0.0978595, y: -0.000027808379, z: -0.000002631259}
+      position: {x: -0.09780839, y: -0.00009204864, z: 0.0000066493035}
       rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1, y: 1.0000005, z: 1}
+      scale: {x: 0.99999994, y: 1.0000001, z: 1.0000001}
     - name: root Tail2
       parentName: root Tail1
-      position: {x: -0.1320399, y: -0.000042112253, z: 0.00000094016787}
+      position: {x: -0.13192037, y: -0.00010546837, z: 0.0000018106937}
       rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1.0000004, y: 1, z: 1.0000004}
+      scale: {x: 1.0000002, y: 0.99999994, z: 1}
     - name: root Tail3
       parentName: root Tail2
-      position: {x: -0.13509643, y: -0.00005925026, z: -0.0000019673885}
+      position: {x: -0.134945, y: -0.000082686325, z: 0.0000034397124}
       rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1.0000005, y: 1.0000005, z: 0.9999997}
+      scale: {x: 0.9999996, y: 0.9999997, z: 0.99999976}
     - name: root TailNub
       parentName: root Tail3
-      position: {x: -0.13185243, y: 0, z: -7.56979e-10}
+      position: {x: -0.13185246, y: -0.000000024223327, z: -0.000000012111664}
       rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 0.9999998, y: 0.9999998, z: 0.99999994}
+      scale: {x: 1, y: 1.0000001, z: 1}
     - name: root R Thigh
       parentName: root Pelvis
-      position: {x: -0.000000102949144, y: -0.00000010900497, z: -0.07080347}
+      position: {x: -0.00000009689331, y: -0.000000090837474, z: -0.07080347}
       rotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
-      scale: {x: 1.0000004, y: 1.0000007, z: 1.0000006}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
     - name: root R Calf
       parentName: root R Thigh
-      position: {x: -0.13317855, y: -0.000000003027916, z: 0}
+      position: {x: -0.13317852, y: 0.000000006055832, z: -0.000000012111664}
       rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1.0000001, y: 1, z: 0.99999994}
+      scale: {x: 1.0000001, y: 1.0000006, z: 1.0000005}
     - name: root R Foot
       parentName: root R Calf
-      position: {x: -0.06723869, y: 0, z: 0}
+      position: {x: -0.06723867, y: 0.000000012111664, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000004}
+      scale: {x: 1.0000007, y: 1.0000001, z: 1.0000002}
     - name: root R Toe0
       parentName: root R Foot
-      position: {x: -0.045661673, y: 0.056856293, z: -0.000000012111664}
+      position: {x: -0.04566167, y: 0.056856293, z: 0}
       rotation: {x: 0, y: 0, z: 0.7071068, w: -0.7071068}
-      scale: {x: 1.0000004, y: 1.0000001, z: 1.0000004}
+      scale: {x: 1.0000001, y: 1, z: 1.0000004}
     - name: root R Toe0Nub
       parentName: root R Toe0
-      position: {x: -0.06105807, y: 0.000000003027916, z: -0.000000012111664}
+      position: {x: -0.061058074, y: 0.000000001513958, z: 0.000000012111664}
       rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1, y: 1, z: 1.0000001}
+      scale: {x: 1, y: 1, z: 1}
     - name: root L Thigh
       parentName: root Pelvis
-      position: {x: 0.00000009689331, y: 0.00000009689331, z: 0.07080348}
+      position: {x: 0.00000009689331, y: 0.00000010900497, z: 0.07080347}
       rotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
-      scale: {x: 1.0000006, y: 1.0000006, z: 1.0000006}
+      scale: {x: 1, y: 1.0000001, z: 0.99999994}
     - name: root L Calf
       parentName: root L Thigh
-      position: {x: -0.13317853, y: 0, z: -0.000000012111664}
+      position: {x: -0.1331785, y: 0, z: -0.000000006055832}
       rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1, y: 1.0000002, z: 1.0000002}
+      scale: {x: 1.0000002, y: 1.0000001, z: 0.9999999}
     - name: root L Foot
       parentName: root L Calf
-      position: {x: -0.06723869, y: 0, z: 0}
+      position: {x: -0.067238666, y: 0.000000018167496, z: -0.000000006055832}
       rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 0.99999994, y: 1.0000001, z: 0.99999994}
+      scale: {x: 1.0000006, y: 1.0000004, z: 1.0000001}
     - name: root L Toe0
       parentName: root L Foot
-      position: {x: -0.0456617, y: 0.056856297, z: -0.000000012111664}
+      position: {x: -0.04566167, y: 0.05685628, z: -0.000000006055832}
       rotation: {x: 0, y: 0, z: 0.7071068, w: -0.7071068}
-      scale: {x: 1.0000004, y: 1.0000005, z: 1}
+      scale: {x: 1.0000002, y: 0.99999994, z: 1.0000004}
     - name: root L Toe0Nub
       parentName: root L Toe0
-      position: {x: -0.06105806, y: 0, z: 0}
+      position: {x: -0.06105807, y: -0.000000001513958, z: -0.000000006055832}
       rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: -0.99999994, y: -0.99999994, z: -1}
+      scale: {x: -1, y: -1.0000001, z: -1}
     - name: Titi_Monkey
-      parentName: Run(Clone)
+      parentName: Attack_Melee(Clone)
       position: {x: -0.00000034869134, y: -8.404155e-26, z: 3.8123357e-10}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
       scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
