@@ -33,8 +33,8 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: 4764005277169862250}
-    m_Position: {x: 258.40683, y: 181.08966, z: 0}
+    m_State: {fileID: 5994444847640938081}
+    m_Position: {x: 320, y: 160, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -44,15 +44,15 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 4764005277169862250}
---- !u!1102 &4764005277169862250
+  m_DefaultState: {fileID: 5994444847640938081}
+--- !u!1102 &5994444847640938081
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Die_Monkey
+  m_Name: Idle_Moneky_05
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -65,7 +65,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 1827226128182048838, guid: e168d935b3c7ac94885ce72267cb172e, type: 3}
+  m_Motion: {fileID: 1827226128182048838, guid: a588f104365cd1e4b8e6072ddab13566, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
