@@ -2507,6 +2507,8 @@ MonoBehaviour:
   overlapRadius: 10
   nextEnemy: {fileID: 7476244043514120974, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   enemyList: []
+  meleAttackRadius: 0.37
+  melleAttackDistance: 1
 --- !u!114 &4679422234142067689
 MonoBehaviour:
   m_ObjectHideFlags: 0

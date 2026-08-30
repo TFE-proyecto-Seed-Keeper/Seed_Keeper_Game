@@ -120815,14 +120815,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TitiController
       objectReference: {fileID: 0}
-    - target: {fileID: 6049787876070290302, guid: 91e7896f202ba41949b34ca62f3c9ca9, type: 3}
-      propertyPath: meleAttackRadius
-      value: 0.37
-      objectReference: {fileID: 0}
-    - target: {fileID: 6049787876070290302, guid: 91e7896f202ba41949b34ca62f3c9ca9, type: 3}
-      propertyPath: melleAttackDistance
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
