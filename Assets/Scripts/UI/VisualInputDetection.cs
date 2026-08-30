@@ -10,7 +10,10 @@ public class VisualInputDetection : MonoBehaviour
     [SerializeField]
     Sprite pressSpriteButton, normalSpriteButton;
 
-    
+    [SerializeField]
+    GameObject padIcon, KeyIcon;
+
+
 
     [SerializeField]
     TextMeshProUGUI attackNameText;
@@ -26,5 +29,17 @@ public class VisualInputDetection : MonoBehaviour
         attackNameText.text = AttackName;
     }
 
-   
+    public void SetJoystick()
+    {
+        padIcon.SetActive(true);
+        KeyIcon.SetActive(false);
+    }
+
+    public void SetKeyboard()
+    {
+        padIcon.SetActive(false);
+        KeyIcon.SetActive(true);
+    }
+
+
 }

@@ -276,17 +276,6 @@
                 },
                 {
                     "name": "",
-                    "id": "886e731e-7071-4ae4-95c0-e61739dad6fd",
-                    "path": "<Touchscreen>/primaryTouch/tap",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Touch",
-                    "action": "AttackMelee",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "cc8d2a0b-4774-40f6-b07c-67bac75f6f75",
                     "path": "<Keyboard>/j",
                     "interactions": "",
@@ -309,17 +298,6 @@
                 },
                 {
                     "name": "",
-                    "id": "d17a3fb2-827c-4d13-b706-d79e673de48e",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "AttackMidddle",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "f03d6dd1-aa83-425d-a9b4-3b6d0e5bdfa8",
                     "path": "<Keyboard>/k",
                     "interactions": "",
@@ -336,17 +314,6 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
-                    "action": "AttackRange",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "455ed081-5707-4c4f-b1e3-2a7018627d6a",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
                     "action": "AttackRange",
                     "isComposite": false,
                     "isPartOfComposite": false

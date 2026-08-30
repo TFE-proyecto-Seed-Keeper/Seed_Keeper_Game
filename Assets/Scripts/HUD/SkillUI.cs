@@ -14,6 +14,9 @@ public class SkillUI : MonoBehaviour
     public InputActionReference skillAction;
 
     [SerializeField]
+    GameObject padIcon, KeyIcon;
+
+    [SerializeField]
     Image coldawnImage;
 
     [SerializeField]
@@ -86,5 +89,17 @@ public class SkillUI : MonoBehaviour
         coldawnImage.fillAmount = 0;
 
         skillEnabled = true;
+    }
+
+    public void SetJoystick()
+    {
+        padIcon.SetActive(true);
+        KeyIcon.SetActive(false);
+    }
+
+    public void SetKeyboard()
+    {
+        padIcon.SetActive(false);
+        KeyIcon.SetActive(true);
     }
 }
