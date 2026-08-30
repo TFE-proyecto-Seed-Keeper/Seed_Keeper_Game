@@ -11,6 +11,8 @@ public class JoystickDetection : MonoBehaviour
      [SerializeField]
      Image iconImage;
 
+    public bool isJoystick = false;
+
     // Update is called once per frame
     void Update()
     {
@@ -18,10 +20,17 @@ public class JoystickDetection : MonoBehaviour
         if(gamepads.Count>0)
         {
             iconImage.sprite = pad;
+            isJoystick = true;
         }
         else
         {
             iconImage.sprite = keyboard;
+            isJoystick = false;
         }
+    }
+
+    public bool DetectJoystick()
+    {
+        return isJoystick;
     }
 }
