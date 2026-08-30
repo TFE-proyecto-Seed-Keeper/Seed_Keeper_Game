@@ -1,10 +1,9 @@
-using UnityEngine;
-
 using System.Collections.Generic;
-
+using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
-public class AttackPlayer : MonoBehaviour
+public class AtackSystem : MonoBehaviour, IAttacks
 {
     [SerializeField]
     int enemyIndex = 0;
@@ -16,6 +15,12 @@ public class AttackPlayer : MonoBehaviour
     public InputActionReference nextEnemy;
 
     public List<EnemySystem> enemyList = new List<EnemySystem>();
+
+    [SerializeField]
+    float meleAttackRadius;
+
+    [SerializeField]
+    float melleAttackDistance;
 
     void OnEnable()
     {
@@ -85,6 +90,28 @@ public class AttackPlayer : MonoBehaviour
        
     }
 
-    
-   
+    public void SetMeleeAttack()
+    {
+        print("Send Melee Atack");
+
+        //Collider[] hitColliders = Physics.OverlapSphere(transform.forward + new Vector3(0,0,melleAttackDistance), meleAttackRadius);
+        Vector3 overlapCenter = transform.position + (transform.forward * melleAttackDistance);
+        Collider[] hitColliders = Physics.OverlapSphere(overlapCenter, meleAttackRadius);
+
+        foreach (var hitCollider in hitColliders)
+        {
+            ExecuteEvents.Execute<IDamage>(hitCollider.gameObject, null, (handler, eventData) => handler.ReciveDamage(10f));
+            
+        }
+    }
+
+    public void SetRangettack()
+    {
+        
+    }
+
+    public void SetAreaAttack()
+    {
+        
+    }
 }

@@ -1,9 +1,12 @@
 using UnityEngine;
 
-public class EnemySystem : MonoBehaviour
+public class EnemySystem : MonoBehaviour, IDamage
 {
     [SerializeField]
     GameObject indicator;
+
+    [SerializeField]
+    Animator animator;
 
     public void SetActiveEnemy()
     {
@@ -15,4 +18,9 @@ public class EnemySystem : MonoBehaviour
         indicator.SetActive(false);
     }
 
+    public void ReciveDamage(float damage)
+    {
+        print("recieve Melee Atack o n Enemy amount "+damage);
+        animator.SetTrigger("damage");
+    }
 }
