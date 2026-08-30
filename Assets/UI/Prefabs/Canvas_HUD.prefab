@@ -795,7 +795,7 @@ GameObject:
   - component: {fileID: 5946404633394552948}
   - component: {fileID: 6245774020807672179}
   m_Layer: 5
-  m_Name: Btn_Skill (1)
+  m_Name: Btn_ melee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -900,10 +900,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillUI
   skillAnimator: {fileID: 5946404633394552948}
   skillAction: {fileID: 1120369429361536294, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  attackType: 1
   padIcon: {fileID: 5611628467490619054}
   KeyIcon: {fileID: 3377443460282586144}
   coldawnImage: {fileID: 3224478252755181102}
-  skillDelay: 0.5
+  skillDelay: 0.3
   skillScale: 0.025
   skillEnabled: 0
 --- !u!1 &2182617998294194612
@@ -2195,7 +2196,7 @@ GameObject:
   - component: {fileID: 1370983062362345889}
   - component: {fileID: 3710713510944892190}
   m_Layer: 5
-  m_Name: Btn_Skill (2)
+  m_Name: Btn_range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2300,10 +2301,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillUI
   skillAnimator: {fileID: 1370983062362345889}
   skillAction: {fileID: -6302882732639390473, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  attackType: 2
   padIcon: {fileID: 8041002990569460396}
   KeyIcon: {fileID: 8328464136556778917}
   coldawnImage: {fileID: 51588768450015477}
-  skillDelay: 0.75
+  skillDelay: 0.5
   skillScale: 0.025
   skillEnabled: 0
 --- !u!1 &4989221990437760729
@@ -2502,7 +2504,7 @@ GameObject:
   - component: {fileID: 5203789481327503209}
   - component: {fileID: 1630202348690833055}
   m_Layer: 5
-  m_Name: Btn_Skill (3)
+  m_Name: Btn_area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2607,6 +2609,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillUI
   skillAnimator: {fileID: 5203789481327503209}
   skillAction: {fileID: 8070917918808334646, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  attackType: 3
   padIcon: {fileID: 6711393010600603563}
   KeyIcon: {fileID: 720860171964123725}
   coldawnImage: {fileID: 4992614969089996409}
