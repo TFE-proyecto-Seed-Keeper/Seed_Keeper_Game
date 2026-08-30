@@ -1,8 +1,10 @@
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.InputSystem; // Necesario para el Nuevo Input System
-using System;
 using System.Collections;
+using UnityEngine;
+using UnityEngine.InputSystem; // Necesario para el Nuevo Input System
+using UnityEngine.UI;
+using System.Collections.Generic;
+using System;
+using UnityEditor.UIElements;
 
 public class SkillUI : MonoBehaviour
 {
@@ -12,6 +14,16 @@ public class SkillUI : MonoBehaviour
     [Header("Configuración de Input")]
     // Te permite arrastrar la acción (ej. "Player/UseSkill") desde el Inspector
     public InputActionReference skillAction;
+
+    public enum AttackType
+    { 
+        None,
+        melee,
+        range,
+        area
+    }
+
+    public AttackType attackType ;
 
     [SerializeField]
     GameObject padIcon, KeyIcon;
@@ -25,8 +37,16 @@ public class SkillUI : MonoBehaviour
     [SerializeField]
     bool skillEnabled;
 
+    public List<IAttacks> AllIAttacks = new List<IAttacks>();
+
+    public void TakeDamage(float amount)
+    {
+        Debug.Log($"{gameObject.name} recibió {amount} de daño global!");
+    }
+
     private void OnEnable()
     {
+        FindIattacks();
         // Nos suscribimos a los eventos cuando el objeto se activa
         // 'started' equivale al momento en que el botón baja (GetButtonDown)
         skillAction.action.started += OnSkillPressed;
@@ -54,11 +74,14 @@ public class SkillUI : MonoBehaviour
     {
         if (!skillEnabled)
             return;
-
+       
         skillAnimator.SetTrigger("Pressed");
         // LanzaHabilidad();
+        AttackMeleee();
 
-        
+        StartCoroutine(BlockSkill());
+
+
     }
 
     // Este método se dispara automáticamente al soltar
@@ -68,8 +91,6 @@ public class SkillUI : MonoBehaviour
             return;
 
         skillAnimator.SetTrigger("Normal");
-
-        StartCoroutine(BlockSkill());
     }
 
     IEnumerator BlockSkill()
@@ -101,5 +122,48 @@ public class SkillUI : MonoBehaviour
     {
         padIcon.SetActive(false);
         KeyIcon.SetActive(true);
+    }
+
+
+    void AttackMeleee()
+    {
+        
+        foreach (var attack in AllIAttacks)
+        {
+            switch (attackType)
+            {
+                case AttackType.None:
+                    break;
+
+                case AttackType.melee:
+                    attack.SetMeleeAttack();
+                    break;
+
+                case AttackType.range:
+                    attack.SetRangettack();
+                    break;
+
+                case AttackType.area:
+                    attack.SetAreaAttack();
+                    break;
+
+            }
+                      
+            
+            
+        }
+        
+    }
+
+    void FindIattacks()
+    {
+        var monos = FindObjectsByType<MonoBehaviour>();
+        foreach (var mb in monos)
+        {
+            if (mb is IAttacks attack)
+            {
+               AllIAttacks.Add(attack);
+            }
+        }
     }
 }
