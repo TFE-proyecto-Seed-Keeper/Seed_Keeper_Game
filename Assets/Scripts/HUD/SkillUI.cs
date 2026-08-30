@@ -1,5 +1,8 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem; // Necesario para el Nuevo Input System
+using System;
+using System.Collections;
 
 public class SkillUI : MonoBehaviour
 {
@@ -9,6 +12,15 @@ public class SkillUI : MonoBehaviour
     [Header("Configuración de Input")]
     // Te permite arrastrar la acción (ej. "Player/UseSkill") desde el Inspector
     public InputActionReference skillAction;
+
+    [SerializeField]
+    Image coldawnImage;
+
+    [SerializeField]
+    float skillDelay, skillScale;
+
+    [SerializeField]
+    bool skillEnabled;
 
     private void OnEnable()
     {
@@ -22,6 +34,8 @@ public class SkillUI : MonoBehaviour
         // Opcional: Asegurarnos de que la acción esté habilitada para leerse
         // (A veces el PlayerInput ya lo hace por ti)
         skillAction.action.Enable();
+
+        StartCoroutine(BlockSkill());
     }
 
     private void OnDisable()
@@ -35,13 +49,42 @@ public class SkillUI : MonoBehaviour
     // Este método se dispara automáticamente al presionar
     private void OnSkillPressed(InputAction.CallbackContext context)
     {
+        if (!skillEnabled)
+            return;
+
         skillAnimator.SetTrigger("Pressed");
         // LanzaHabilidad();
+
+        
     }
 
     // Este método se dispara automáticamente al soltar
     private void OnSkillReleased(InputAction.CallbackContext context)
     {
+        if (!skillEnabled)
+            return;
+
         skillAnimator.SetTrigger("Normal");
+
+        StartCoroutine(BlockSkill());
+    }
+
+    IEnumerator BlockSkill()
+    {
+        skillEnabled = false;
+
+        coldawnImage.fillAmount = 1;
+
+        float amounScale = skillScale / skillDelay;
+
+        for (float i = 0; i < skillDelay; i+= skillScale)
+        {
+            coldawnImage.fillAmount -= amounScale;
+            yield return new WaitForSeconds(skillScale);
+        }
+
+        coldawnImage.fillAmount = 0;
+
+        skillEnabled = true;
     }
 }

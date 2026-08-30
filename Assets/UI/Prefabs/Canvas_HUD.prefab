@@ -387,7 +387,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 0
   m_FillOrigin: 2
   m_UseSpriteMesh: 0
@@ -810,6 +810,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillUI
   skillAnimator: {fileID: 5946404633394552948}
   skillAction: {fileID: 1120369429361536294, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  coldawnImage: {fileID: 3224478252755181102}
+  skillDelay: 0.5
+  skillScale: 0.025
+  skillEnabled: 0
 --- !u!1 &2182617998294194612
 GameObject:
   m_ObjectHideFlags: 0
@@ -2128,6 +2132,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillUI
   skillAnimator: {fileID: 1370983062362345889}
   skillAction: {fileID: -6302882732639390473, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  coldawnImage: {fileID: 51588768450015477}
+  skillDelay: 0.75
+  skillScale: 0.025
+  skillEnabled: 0
 --- !u!1 &4989221990437760729
 GameObject:
   m_ObjectHideFlags: 0
@@ -2428,6 +2436,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillUI
   skillAnimator: {fileID: 5203789481327503209}
   skillAction: {fileID: 8070917918808334646, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  coldawnImage: {fileID: 4992614969089996409}
+  skillDelay: 1
+  skillScale: 0.025
+  skillEnabled: 0
 --- !u!1 &6188903523012510588
 GameObject:
   m_ObjectHideFlags: 0
@@ -2498,7 +2510,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 0
   m_FillOrigin: 2
   m_UseSpriteMesh: 0
@@ -2886,7 +2898,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 0
   m_FillOrigin: 2
   m_UseSpriteMesh: 0
