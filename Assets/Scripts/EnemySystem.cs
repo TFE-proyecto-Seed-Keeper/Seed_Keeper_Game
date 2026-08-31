@@ -22,5 +22,9 @@ public class EnemySystem : MonoBehaviour, IDamage
     {
         print("recieve Melee Atack o n Enemy amount "+damage);
         animator.SetTrigger("damage");
+        if(GetComponentInChildren<TextParticleEmitter>() is TextParticleEmitter textEmitter)
+        {
+            textEmitter.EmitDamageText(damage);
+        }
     }
 }
