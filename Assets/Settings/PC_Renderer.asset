@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
-  m_Name: SeeBehindEnemy
+  m_Name: SeeBehindForEnemy
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.RenderObjects
   m_Active: 1
   settings:
-    passTag: SeeBehindEnemy
+    passTag: SeeBehindForEnemy
     Event: 300
     filterSettings:
       RenderQueueType: 0
@@ -83,7 +83,7 @@ MonoBehaviour:
     m_Bits: 119
   m_TransparentLayerMask:
     serializedVersion: 2
-    m_Bits: 127
+    m_Bits: 119
   m_DefaultStencilState:
     overrideStencilState: 0
     stencilReference: 1
@@ -110,11 +110,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
-  m_Name: SeeBehindFront
+  m_Name: SeeBehindFrontForPlayerAndEnemy
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.RenderObjects
   m_Active: 1
   settings:
-    passTag: SeeBehindFront
+    passTag: SeeBehindFrontForPlayerAndEnemy
     Event: 300
     filterSettings:
       RenderQueueType: 0
@@ -178,11 +178,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
-  m_Name: SeeBehindPlayer
+  m_Name: SeeBehindForPlayer
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.RenderObjects
   m_Active: 1
   settings:
-    passTag: SeeBehindPlayer
+    passTag: SeeBehindForPlayer
     Event: 300
     filterSettings:
       RenderQueueType: 0
