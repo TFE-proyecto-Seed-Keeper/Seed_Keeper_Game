@@ -1330,8 +1330,9 @@ GameObject:
   - component: {fileID: 3504810039964339013}
   - component: {fileID: 4024226582846022280}
   - component: {fileID: 5910519005198507678}
+  - component: {fileID: 996274200553662877}
   m_Layer: 5
-  m_Name: Slider #2 (Segments)
+  m_Name: EnergyBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1418,7 +1419,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3231842292057256257}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: b7d66652fcc93a449a388390946ea40b, type: 2}
   m_CullingMode: 0
@@ -1452,6 +1453,20 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &996274200553662877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3231842292057256257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8d1ff0c3df44848a805dfa13e012c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SliderBarUI
+  sliderBar: {fileID: 3504810039964339013}
+  smoothSpeed: 2
 --- !u!1 &3377443460282586144
 GameObject:
   m_ObjectHideFlags: 0
@@ -3747,8 +3762,9 @@ GameObject:
   - component: {fileID: 519073360124986238}
   - component: {fileID: 8303734939891161785}
   - component: {fileID: 8640639735231956424}
+  - component: {fileID: 5525544257746035870}
   m_Layer: 5
-  m_Name: Slider 2 (Horizontal)
+  m_Name: HeathBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3835,7 +3851,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8728975099179046797}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 22de3e5bf409f614aa730fbe2d067f6b, type: 2}
   m_CullingMode: 0
@@ -3869,6 +3885,20 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &5525544257746035870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8728975099179046797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8d1ff0c3df44848a805dfa13e012c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SliderBarUI
+  sliderBar: {fileID: 519073360124986238}
+  smoothSpeed: 2
 --- !u!1 &8751166670063430521
 GameObject:
   m_ObjectHideFlags: 0
