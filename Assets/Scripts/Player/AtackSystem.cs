@@ -22,6 +22,9 @@ public class AtackSystem : MonoBehaviour, IAttacks
     [SerializeField]
     float melleAttackDistance;
 
+    [SerializeField]
+    Transform projectileCaster;
+
     void OnEnable()
     {
         nextEnemy.action.Enable();
@@ -107,7 +110,19 @@ public class AtackSystem : MonoBehaviour, IAttacks
 
     public void SetRangettack()
     {
-        
+        if(FindAnyObjectByType<ProjectilePulling>() is ProjectilePulling projectilePulling)
+        {
+            print("Send Range Atack");
+            if(enemySelected == null)
+            {
+               //projectilePulling.launchProjectile(projectileCaster.transform projectileCaster.forward * 10f, projectileCaster, ProjectilePulling.ProjectileType.Player);
+            }
+            else
+            {
+                projectilePulling.launchProjectile(enemySelected.transform.position, projectileCaster, ProjectilePulling.ProjectileType.Player);
+            }
+            
+        }
     }
 
     public void SetAreaAttack()

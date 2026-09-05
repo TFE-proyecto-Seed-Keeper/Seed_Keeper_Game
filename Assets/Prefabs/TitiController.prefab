@@ -2145,6 +2145,37 @@ Transform:
   - {fileID: 7753495711150944652}
   m_Father: {fileID: 8733847803573430242}
   m_LocalEulerAnglesHint: {x: -10.952893, y: 7.6471195, z: -69.26872}
+--- !u!1 &4866375650528489078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7313835288439247989}
+  m_Layer: 3
+  m_Name: ProjectileCaster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7313835288439247989
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4866375650528489078}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.468, z: 0.529}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3191310247253742600}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4931890667168870155
 GameObject:
   m_ObjectHideFlags: 0
@@ -2255,6 +2286,7 @@ Transform:
   - {fileID: 5152755621849850714}
   - {fileID: 7127682768426119866}
   - {fileID: 8372414910038738038}
+  - {fileID: 7313835288439247989}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2441877931355573291
@@ -2509,6 +2541,7 @@ MonoBehaviour:
   enemyList: []
   meleAttackRadius: 0.37
   melleAttackDistance: 1
+  projectileCaster: {fileID: 7313835288439247989}
 --- !u!114 &4679422234142067689
 MonoBehaviour:
   m_ObjectHideFlags: 0
