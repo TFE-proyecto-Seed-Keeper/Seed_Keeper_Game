@@ -54,7 +54,7 @@ public class EnemySystem : MonoBehaviour, IDamage
         indicator.SetActive(false);
     }
 
-    public void ReciveDamage(float damage)
+    public void ReceiveDamage(float damage)
     {
         if (!isalive)
             return;

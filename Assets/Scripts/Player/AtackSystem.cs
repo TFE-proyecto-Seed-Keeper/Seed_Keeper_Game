@@ -100,7 +100,7 @@ public class AtackSystem : MonoBehaviour, IAttacks
 
         foreach (var hitCollider in hitColliders)
         {
-            ExecuteEvents.Execute<IDamage>(hitCollider.gameObject, null, (handler, eventData) => handler.ReciveDamage(10f));
+            ExecuteEvents.Execute<IDamage>(hitCollider.gameObject, null, (handler, eventData) => handler.ReceiveDamage(10f));
             
         }
     }
