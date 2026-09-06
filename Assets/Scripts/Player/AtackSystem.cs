@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -23,7 +24,7 @@ public class AtackSystem : MonoBehaviour, IAttacks
     float rangeAtackDamage;
     
     [SerializeField]
-    float areaAttackDamage;
+    float areaAttackDamage, areaAttackRadius, areaAttackvFXDelay, areaAttackCount, areaDelayBetweenAttacks;
 
     [SerializeField]
     Transform projectileCaster;
@@ -101,7 +102,6 @@ public class AtackSystem : MonoBehaviour, IAttacks
     {
         print("Send Melee Atack");
 
-        //Collider[] hitColliders = Physics.OverlapSphere(transform.forward + new Vector3(0,0,melleAttackDistance), meleAttackRadius);
         Vector3 overlapCenter = transform.position + (transform.forward * melleAttackDistance);
         Collider[] hitColliders = Physics.OverlapSphere(overlapCenter, meleAttackRadius);
 
@@ -135,7 +135,55 @@ public class AtackSystem : MonoBehaviour, IAttacks
 
     public void SetAreaAttack()
     {
-            transform.LookAt(enemySelected.transform);
+                print("Send area Atack");
+            
+                if(enemySelected == null)
+                {
+                    StartCoroutine(StartVFXareaAttack(transform));
+                }
+                else
+                {
+                    transform.LookAt(enemySelected.transform);
+                    StartCoroutine(StartVFXareaAttack(enemySelected.transform));
+                    
+                }
         
+    }
+
+    public IEnumerator StartVFXareaAttack(Transform targetforAttack)
+    {
+        ParticleSystem areaAttackVFX;
+        areaAttackVFX = GetComponentInChildren<AttacksVFXcontroller>().AreaAttackVFX;
+        
+        if (areaAttackVFX.isPlaying)
+            areaAttackVFX.Stop();
+        areaAttackVFX.transform.position = targetforAttack.position;
+        areaAttackVFX.transform.SetParent(null);
+        
+        yield return new WaitForSeconds(areaAttackvFXDelay);
+        
+        areaAttackVFX.Play();
+
+        for (int i = 0; i < areaAttackCount; i++)
+        {
+            SetAreaDamage(areaAttackDamage, targetforAttack.position, areaAttackRadius);
+            yield return new WaitForSeconds(areaDelayBetweenAttacks);
+        }
+        
+        areaAttackVFX.transform.SetParent(areaAttackVFX.transform);
+        areaAttackVFX.transform.localPosition = Vector3.zero;
+        
+    }
+
+    void SetAreaDamage(float damage,  Vector3 damagePlace, float radius)
+    {
+       
+        Collider[] hitColliders = Physics.OverlapSphere(damagePlace, radius);
+
+        foreach (var hitCollider in hitColliders)
+        {
+            ExecuteEvents.Execute<IDamage>(hitCollider.gameObject, null, (handler, eventData) => handler.ReceiveDamage(meleeAttackDamage));
+            
+        }
     }
 }
