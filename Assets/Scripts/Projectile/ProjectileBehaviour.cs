@@ -48,7 +48,12 @@ public class ProjectileBehaviour : MonoBehaviour
        Invoke("ResetProjectile", projectileTimeLife);
     }
 
-    void FixedUpdate()
+    void Update()
+    {
+       MoveProjectile();
+    }
+
+    void MoveProjectile()
     {
         if (!state)
             return;
@@ -57,7 +62,14 @@ public class ProjectileBehaviour : MonoBehaviour
         {
             Vector3 targetPosition = target + new Vector3(0, 0.5f, 0);
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, projectileSpeed * Time.deltaTime);
+            
+            if (Vector3.Distance(transform.position, targetPosition) < 0.01f)
+            {
+                print("Projectile Impacto!!!");
+               ResetProjectile();
+            }
         }
+      
     }
 
     public void ResetProjectile()
@@ -71,16 +83,9 @@ public class ProjectileBehaviour : MonoBehaviour
        target = Vector3.zero;
 
        print("Projectile desabilitado");
-
     }
 
-    void OnCollisionEnter(Collision collision)
-    {
-        print("Projectile Impacto!!!");
-        ResetProjectile();
-        rb.linearVelocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
-    }
+   
 
     
 
