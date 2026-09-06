@@ -904,7 +904,7 @@ MonoBehaviour:
   padIcon: {fileID: 5611628467490619054}
   KeyIcon: {fileID: 3377443460282586144}
   coldawnImage: {fileID: 3224478252755181102}
-  skillDelay: 0.5
+  skillDelay: 0.35
   skillScale: 0.025
   skillEnabled: 0
 --- !u!1 &2182617998294194612
@@ -2628,7 +2628,7 @@ MonoBehaviour:
   padIcon: {fileID: 6711393010600603563}
   KeyIcon: {fileID: 720860171964123725}
   coldawnImage: {fileID: 4992614969089996409}
-  skillDelay: 1.5
+  skillDelay: 4.3
   skillScale: 0.025
   skillEnabled: 0
 --- !u!1 &6188903523012510588
