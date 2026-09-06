@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class AttacksVFXcontroller : MonoBehaviour, IAttacks
@@ -5,6 +6,8 @@ public class AttacksVFXcontroller : MonoBehaviour, IAttacks
 
     [SerializeField]
     ParticleSystem meleeVFX, rangueVFX, areaVFX;
+    
+    [field: SerializeField] public ParticleSystem AreaAttackVFX { get; set; }
 
     public void SetMeleeAttack()
     {
@@ -27,4 +30,8 @@ public class AttacksVFXcontroller : MonoBehaviour, IAttacks
             areaVFX.Stop();
         areaVFX.Play();
     }
+    
+   
+    
+    
 }
