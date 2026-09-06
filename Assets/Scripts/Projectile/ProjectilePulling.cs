@@ -17,13 +17,13 @@ public class ProjectilePulling : MonoBehaviour
         projectileList = new List<ProjectileBehaviour>(GetComponentsInChildren<ProjectileBehaviour>(true));
     }
 
-    public void launchProjectile(Vector3 target, Transform origin, ProjectileType projectileType)
+    public void launchProjectile(Vector3 target, Transform origin, ProjectileType projectileType, float damage)
     {
         foreach (var projectile in projectileList)
         {
             if (!projectile.gameObject.activeInHierarchy && projectile.projectileType == projectileType)
             {
-                projectile.Setprojectile(target, origin);
+                projectile.Setprojectile(target, origin, damage);
                 print("Projectile lanzado !!!");
                 break;
             }

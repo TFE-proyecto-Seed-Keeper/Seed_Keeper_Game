@@ -17,10 +17,13 @@ public class AtackSystem : MonoBehaviour, IAttacks
     public List<EnemySystem> enemyList = new List<EnemySystem>();
 
     [SerializeField]
-    float meleAttackRadius;
+    float meleAttackRadius, melleAttackDistance, meleeAttackDamage;
 
     [SerializeField]
-    float melleAttackDistance;
+    float rangeAtackDamage;
+    
+    [SerializeField]
+    float areaAttackDamage;
 
     [SerializeField]
     Transform projectileCaster;
@@ -88,6 +91,7 @@ public class AtackSystem : MonoBehaviour, IAttacks
         enemyList[enemyIndex].SetActiveEnemy();
         Debug.Log("Enemy Select "+ enemyList[enemyIndex].name);
         enemySelected = enemyList[enemyIndex];
+        transform.LookAt(enemySelected.transform);
         enemyIndex++;
 
        
@@ -103,7 +107,7 @@ public class AtackSystem : MonoBehaviour, IAttacks
 
         foreach (var hitCollider in hitColliders)
         {
-            ExecuteEvents.Execute<IDamage>(hitCollider.gameObject, null, (handler, eventData) => handler.ReceiveDamage(10f));
+            ExecuteEvents.Execute<IDamage>(hitCollider.gameObject, null, (handler, eventData) => handler.ReceiveDamage(meleeAttackDamage));
             
         }
     }
@@ -113,13 +117,17 @@ public class AtackSystem : MonoBehaviour, IAttacks
         if(FindAnyObjectByType<ProjectilePulling>() is ProjectilePulling projectilePulling)
         {
             print("Send Range Atack");
+            
+            
+            
             if(enemySelected == null)
             {
                //projectilePulling.launchProjectile(projectileCaster.transform projectileCaster.forward * 10f, projectileCaster, ProjectilePulling.ProjectileType.Player);
             }
             else
             {
-                projectilePulling.launchProjectile(enemySelected.transform.position, projectileCaster, ProjectilePulling.ProjectileType.Player);
+                projectilePulling.launchProjectile(enemySelected.transform.position, projectileCaster, ProjectilePulling.ProjectileType.Player, rangeAtackDamage);
+                transform.LookAt(enemySelected.transform);
             }
             
         }
@@ -127,6 +135,7 @@ public class AtackSystem : MonoBehaviour, IAttacks
 
     public void SetAreaAttack()
     {
+            transform.LookAt(enemySelected.transform);
         
     }
 }

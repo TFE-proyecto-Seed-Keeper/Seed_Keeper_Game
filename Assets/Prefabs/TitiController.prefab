@@ -2541,6 +2541,9 @@ MonoBehaviour:
   enemyList: []
   meleAttackRadius: 0.37
   melleAttackDistance: 1
+  meleeAttackDamage: 15
+  rangeAtackDamage: 9
+  areaAttackDamage: 7
   projectileCaster: {fileID: 7313835288439247989}
 --- !u!114 &4679422234142067689
 MonoBehaviour:
