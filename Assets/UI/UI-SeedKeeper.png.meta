@@ -329,6 +329,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: UI-Cinematic_Text
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 214
+        width: 100
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 50, y: 0, z: 50, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07f08befb65f4484e9a8c6f13e54e197
+      internalID: 111624814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -349,6 +371,7 @@ TextureImporter:
       UI-Box-Border_02: 611810611
       UI-Box-Solid_01: -1513406768
       UI-Box-Solid_03: 1204868118
+      UI-Cinematic_Text: 111624814
       UI-Line: 631867250
       UI-SeedKeeper_0: 1479748496
       UI-SeedKeeper_1: 1206380491
