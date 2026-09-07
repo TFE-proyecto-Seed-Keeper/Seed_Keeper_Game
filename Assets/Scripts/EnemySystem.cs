@@ -24,9 +24,7 @@ public class EnemySystem : MonoBehaviour, IDamage
     float healt;
 
     float initialHealt;
-
-    [SerializeField]
-    bool isalive = true;
+    public bool isalive = true;
 
     [SerializeField]
     bool isDummy;
@@ -75,13 +73,19 @@ public class EnemySystem : MonoBehaviour, IDamage
         if (healt <= 0)
         {
             animator.SetTrigger("die");
-            isalive = false;
             StartCoroutine(SetDead());
         }
     }
 
     IEnumerator SetDead()
     {
+        isalive = false;
+        
+        if (FindAnyObjectByType<AtackSystem>() is AtackSystem atackSystem)
+        {
+            atackSystem.SelectNextEnemy(1);
+        }
+
         yield return new WaitForSeconds(2f);
         deadParticles.Play();
         yield return new WaitForSeconds(0.15f);

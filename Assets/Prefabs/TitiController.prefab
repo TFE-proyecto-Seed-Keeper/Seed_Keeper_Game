@@ -2546,8 +2546,8 @@ MonoBehaviour:
   rangeAtackDamage: 9
   areaAttackDamage: 7
   areaAttackRadius: 2.5
-  areaAttackvFXDelay: 1
-  areaAttackCount: 4
+  areaAttackvFXDelay: 0.25
+  areaAttackCount: 3
   areaDelayBetweenAttacks: 1
   projectileCaster: {fileID: 7313835288439247989}
 --- !u!114 &4679422234142067689
@@ -4853,6 +4853,10 @@ PrefabInstance:
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6977428997700062278, guid: 991d79a0cf6b9ca47bd058883c042f02, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6977428997708585000, guid: 991d79a0cf6b9ca47bd058883c042f02, type: 3}
       propertyPath: playOnAwake
       value: 0
@@ -4907,15 +4911,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6977428998936722265, guid: 991d79a0cf6b9ca47bd058883c042f02, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.75
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6977428998936722265, guid: 991d79a0cf6b9ca47bd058883c042f02, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.75
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6977428998936722265, guid: 991d79a0cf6b9ca47bd058883c042f02, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.75
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6977428998936722265, guid: 991d79a0cf6b9ca47bd058883c042f02, type: 3}
       propertyPath: m_LocalPosition.x

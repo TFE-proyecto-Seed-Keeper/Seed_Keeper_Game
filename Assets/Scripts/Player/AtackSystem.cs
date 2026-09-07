@@ -69,7 +69,16 @@ public class AtackSystem : MonoBehaviour, IAttacks
         {
             if (hitColliders[i].CompareTag("enemy"))
             {
-                enemyList.Add(hitColliders[i].GetComponent<EnemySystem>());
+                var enemySystem = hitColliders[i].GetComponent<EnemySystem>();
+                if (enemySystem)
+                {
+                    if (enemySystem.isalive)
+                    {
+                        enemyList.Add(enemySystem);
+                    }
+                }
+
+               
             }
         }
 
@@ -167,14 +176,17 @@ public class AtackSystem : MonoBehaviour, IAttacks
         ParticleSystem areaAttackVFX;
         areaAttackVFX = GetComponentInChildren<AttacksVFXcontroller>().AreaAttackVFX;
         
-        if (areaAttackVFX.isPlaying)
-            areaAttackVFX.Stop();
+        
+        areaAttackVFX.Stop();
+        
         areaAttackVFX.transform.position = targetforAttack.position;
         areaAttackVFX.transform.SetParent(null);
         
         yield return new WaitForSeconds(areaAttackvFXDelay);
         
         areaAttackVFX.Play();
+        
+        yield return new WaitForSeconds(areaDelayBetweenAttacks);
 
         for (int i = 0; i < areaAttackCount; i++)
         {

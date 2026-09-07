@@ -8065,7 +8065,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1500
-  field of view: 52
+  field of view: 70
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -28780,7 +28780,7 @@ MonoBehaviour:
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
-    FieldOfView: 52
+    FieldOfView: 70
     OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 1500
@@ -47175,6 +47175,26 @@ PrefabInstance:
     - target: {fileID: 5184271104960397991, guid: 91e7896f202ba41949b34ca62f3c9ca9, type: 3}
       propertyPath: m_Name
       value: TitiController
+      objectReference: {fileID: 0}
+    - target: {fileID: 6037208622050311322, guid: 91e7896f202ba41949b34ca62f3c9ca9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6037208622050311322, guid: 91e7896f202ba41949b34ca62f3c9ca9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6037208622050311322, guid: 91e7896f202ba41949b34ca62f3c9ca9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6049787876070290302, guid: 91e7896f202ba41949b34ca62f3c9ca9, type: 3}
+      propertyPath: areaAttackCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6049787876070290302, guid: 91e7896f202ba41949b34ca62f3c9ca9, type: 3}
+      propertyPath: areaAttackvFXDelay
+      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
