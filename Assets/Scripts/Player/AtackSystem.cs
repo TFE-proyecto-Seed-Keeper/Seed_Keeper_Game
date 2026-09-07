@@ -11,9 +11,10 @@ public class AtackSystem : MonoBehaviour, IAttacks
 
     public EnemySystem enemySelected;
 
-    public float overlapRadius;
+    public float enemySearchRadius;
 
     public InputActionReference nextEnemy;
+    public InputActionReference prevEnemy;
 
     public List<EnemySystem> enemyList = new List<EnemySystem>();
 
@@ -32,20 +33,24 @@ public class AtackSystem : MonoBehaviour, IAttacks
     void OnEnable()
     {
         nextEnemy.action.Enable();
-        nextEnemy.action.performed += ctx => SelectEnemy();
+        nextEnemy.action.performed += ctx => SelectNextEnemy(1);
+        
+        prevEnemy.action.Enable();
+        prevEnemy.action.performed += ctx => SelectNextEnemy(-1);
     }
 
     void OnDisable()
     {
         nextEnemy.action.Disable();
-        nextEnemy.action.performed -= ctx => SelectEnemy();
+        nextEnemy.action.performed -= ctx => SelectNextEnemy(1);
+        
+        prevEnemy.action.Disable();
+        prevEnemy.action.performed -= ctx => SelectNextEnemy(-1);
     }
 
-    public void SelectEnemy()
+    public void SelectNextEnemy(int selectDirection)
     {
-        Debug.Log("Select Enemy");
-
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, overlapRadius);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, enemySearchRadius);
 
         if(enemyList.Count > 0)
         {
@@ -58,10 +63,7 @@ public class AtackSystem : MonoBehaviour, IAttacks
         {
             enemyIndex = 0;
         }
-
         enemyList.Clear();
-
-       
 
         for (int i = 0; i < hitColliders.Length; i++)
         {
@@ -77,11 +79,17 @@ public class AtackSystem : MonoBehaviour, IAttacks
             return;
         }
 
-        Debug.Log("Enemy founded "+ enemyList.Count);
+        //Debug.Log("Enemy founded "+ enemyList.Count);
+        
+        enemyIndex+= selectDirection;
 
         if(enemyIndex >= enemyList.Count)
         {
             enemyIndex = 0;
+        }
+        else if (enemyIndex < 0)
+        {
+            enemyIndex = enemyList.Count-1;
         }
 
         foreach (var enemy in enemyList)
@@ -90,12 +98,16 @@ public class AtackSystem : MonoBehaviour, IAttacks
         }
 
         enemyList[enemyIndex].SetActiveEnemy();
-        Debug.Log("Enemy Select "+ enemyList[enemyIndex].name);
+        Debug.Log("Enemy Select index "+enemyIndex+" " +enemyList[enemyIndex].name);
         enemySelected = enemyList[enemyIndex];
         transform.LookAt(enemySelected.transform);
-        enemyIndex++;
-
        
+    }
+
+    public void RelaseEnemy()
+    {
+        enemySelected = null;
+        SelectNextEnemy(1);
     }
 
     public void SetMeleeAttack()

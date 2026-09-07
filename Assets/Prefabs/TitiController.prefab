@@ -2536,8 +2536,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackPlayer
   enemyIndex: 0
   enemySelected: {fileID: 0}
-  overlapRadius: 10
+  enemySearchRadius: 15
   nextEnemy: {fileID: 7476244043514120974, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  prevEnemy: {fileID: -1994693953834959884, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   enemyList: []
   meleAttackRadius: 0.37
   melleAttackDistance: 1
