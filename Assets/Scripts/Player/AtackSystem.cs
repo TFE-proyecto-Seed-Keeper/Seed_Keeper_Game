@@ -138,12 +138,10 @@ public class AtackSystem : MonoBehaviour, IAttacks
         if(FindAnyObjectByType<ProjectilePulling>() is ProjectilePulling projectilePulling)
         {
             print("Send Range Atack");
-            
-            
-            
             if(enemySelected == null)
             {
-               //projectilePulling.launchProjectile(projectileCaster.transform projectileCaster.forward * 10f, projectileCaster, ProjectilePulling.ProjectileType.Player);
+                if(FindAnyObjectByType<MessageSystem>() is MessageSystem messageSystem)
+                    messageSystem.SetMessage("Ningún objetivo seleccionado");
             }
             else
             {
@@ -190,7 +188,12 @@ public class AtackSystem : MonoBehaviour, IAttacks
 
         for (int i = 0; i < areaAttackCount; i++)
         {
-            SetAreaDamage(areaAttackDamage, targetforAttack.position, areaAttackRadius);
+            if (targetforAttack)
+            {
+                SetAreaDamage(areaAttackDamage, targetforAttack.position, areaAttackRadius);
+            }
+
+           
             yield return new WaitForSeconds(areaDelayBetweenAttacks);
         }
         
