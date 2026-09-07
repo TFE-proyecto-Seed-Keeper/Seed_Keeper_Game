@@ -3,16 +3,15 @@ using UnityEngine;
 using UnityEngine.InputSystem; // Necesario para el Nuevo Input System
 using UnityEngine.UI;
 using System.Collections.Generic;
-using System;
-using UnityEditor.UIElements;
+
 
 public class SkillUI : MonoBehaviour
 {
     [Header("Referencias visuales")]
     public Animator skillAnimator;
 
-    [Header("Configuración de Input")]
-    // Te permite arrastrar la acción (ej. "Player/UseSkill") desde el Inspector
+    [Header("ConfiguraciÃ³n de Input")]
+    // Te permite arrastrar la acciÃ³n (ej. "Player/UseSkill") desde el Inspector
     public InputActionReference skillAction;
 
     public enum AttackType
@@ -41,20 +40,20 @@ public class SkillUI : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        Debug.Log($"{gameObject.name} recibió {amount} de daño global!");
+        Debug.Log($"{gameObject.name} recibiÃ³ {amount} de daÃ±o global!");
     }
 
     private void OnEnable()
     {
         FindIattacks();
         // Nos suscribimos a los eventos cuando el objeto se activa
-        // 'started' equivale al momento en que el botón baja (GetButtonDown)
+        // 'started' equivale al momento en que el botÃ³n baja (GetButtonDown)
         skillAction.action.started += OnSkillPressed;
 
-        // 'canceled' equivale al momento en que el botón sube (GetButtonUp)
+        // 'canceled' equivale al momento en que el botÃ³n sube (GetButtonUp)
         skillAction.action.canceled += OnSkillReleased;
 
-        // Opcional: Asegurarnos de que la acción esté habilitada para leerse
+        // Opcional: Asegurarnos de que la acciÃ³n estÃ³ habilitada para leerse
         // (A veces el PlayerInput ya lo hace por ti)
         skillAction.action.Enable();
 
@@ -69,26 +68,24 @@ public class SkillUI : MonoBehaviour
         skillAction.action.canceled -= OnSkillReleased;
     }
 
-    // Este método se dispara automáticamente al presionar
+    // Este mï¿½todo se dispara automï¿½ticamente al presionar
     private void OnSkillPressed(InputAction.CallbackContext context)
     {
         if (!skillEnabled)
             return;
        
         skillAnimator.SetTrigger("Pressed");
-        // LanzaHabilidad();
-        AttackMeleee();
+        
+        StartAttack();
 
         StartCoroutine(BlockSkill());
 
 
     }
 
-    // Este método se dispara automáticamente al soltar
+    // Este mÃ©todo se dispara automÃ¡ticamente al soltar
     private void OnSkillReleased(InputAction.CallbackContext context)
     {
-        if (!skillEnabled)
-            return;
 
         skillAnimator.SetTrigger("Normal");
     }
@@ -125,7 +122,7 @@ public class SkillUI : MonoBehaviour
     }
 
 
-    void AttackMeleee()
+    void StartAttack()
     {
         
         foreach (var attack in AllIAttacks)
@@ -146,7 +143,6 @@ public class SkillUI : MonoBehaviour
                 case AttackType.area:
                     attack.SetAreaAttack();
                     break;
-
             }
             
         }

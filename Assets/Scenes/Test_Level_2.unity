@@ -47176,26 +47176,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TitiController
       objectReference: {fileID: 0}
-    - target: {fileID: 6037208622050311322, guid: 91e7896f202ba41949b34ca62f3c9ca9, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6037208622050311322, guid: 91e7896f202ba41949b34ca62f3c9ca9, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6037208622050311322, guid: 91e7896f202ba41949b34ca62f3c9ca9, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6049787876070290302, guid: 91e7896f202ba41949b34ca62f3c9ca9, type: 3}
-      propertyPath: areaAttackCount
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6049787876070290302, guid: 91e7896f202ba41949b34ca62f3c9ca9, type: 3}
-      propertyPath: areaAttackvFXDelay
-      value: 0.25
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
