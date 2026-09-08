@@ -2555,6 +2555,9 @@ MonoBehaviour:
   meleeEnergyCost: 1
   areaEnergyCost: 6
   rangeEnergyCost: 3
+  enemyLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &4679422234142067689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2581,21 +2584,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
   playerHealth: {fileID: 11400000, guid: 90705b318a9d93442b513ca1a74b5197, type: 2}
-  OnHealthChanged:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SliderBarUI, Assembly-CSharp
-        m_MethodName: UpdateSliderBar
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   onDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -2612,9 +2600,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnergySystem
   playerEnergy: {fileID: 11400000, guid: f58e3f439e2df254f8f3ad14c651a984, type: 2}
-  OnEnergyChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &5243342821346927682
 GameObject:
   m_ObjectHideFlags: 0

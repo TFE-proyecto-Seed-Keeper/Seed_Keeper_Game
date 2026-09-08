@@ -2,21 +2,18 @@ using System;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "PlayerEnergy", menuName = "Seed Keeper/Player Energy")]
-public class PlayerEnergySO : ScriptableObject
+public class PlayerEnergySO : PlayerAttributeSO
 {
-    [SerializeField] private int maxEnergyCells = 7;
+    [SerializeField] private int maxValue = 7;
     [SerializeField] private float regenerationRate = 2f;
 
-    [NonSerialized] private int currentEnergyCells;
+    [NonSerialized] private int currentValue;
     [NonSerialized] private static readonly string energyKey = "_Player_Energy_";
     [NonSerialized] private float regenerationTime = 0f;
 
-    public int MaxEnergyCells => maxEnergyCells;
-    public int CurrentEnergyCells => currentEnergyCells;
-
     public void Restart()
     {
-        currentEnergyCells = maxEnergyCells;
+        currentValue = maxValue;
         regenerationTime = 0f;
         Save();
     }
@@ -24,20 +21,23 @@ public class PlayerEnergySO : ScriptableObject
     public void Initialize()
     {
         regenerationTime = 0f;
-        currentEnergyCells = Load();
+        currentValue = Load();
 
-        if (currentEnergyCells <= 0)
+        if (currentValue <= 0)
         {
-            currentEnergyCells = maxEnergyCells;
+            currentValue = maxValue;
         }
+
+        TriggerEvent(currentValue, maxValue);
     }
 
     public bool TrySpend(int amount)
     {
         if (CanSpend(amount))
         {
-            currentEnergyCells -= amount;
+            currentValue -= amount;
             Update();
+            TriggerEvent(currentValue, maxValue);
 
             return true;
         }
@@ -47,7 +47,7 @@ public class PlayerEnergySO : ScriptableObject
 
     public bool Regenerate(float deltaTime)
     {
-        if (currentEnergyCells >= maxEnergyCells)
+        if (currentValue >= maxValue)
         {
             return false;
         }
@@ -60,8 +60,9 @@ public class PlayerEnergySO : ScriptableObject
         }
 
         regenerationTime = 0f;
-        currentEnergyCells += 1;
+        currentValue += 1;
         Update();
+        TriggerEvent(currentValue, maxValue);
 
         return true;
 
@@ -69,17 +70,17 @@ public class PlayerEnergySO : ScriptableObject
 
     private void Update()
     {
-        currentEnergyCells = Mathf.Clamp(currentEnergyCells, 0, maxEnergyCells);
+        currentValue = Mathf.Clamp(currentValue, 0, maxValue);
         Save();
     }
 
     private void Save()
     {
-        PlayerPrefs.SetInt(energyKey, currentEnergyCells);
+        PlayerPrefs.SetInt(energyKey, currentValue);
         PlayerPrefs.Save();
     }
 
     private int Load() => PlayerPrefs.GetInt(energyKey, 0);
 
-    private bool CanSpend(int amount) => currentEnergyCells >= amount;
+    private bool CanSpend(int amount) => currentValue >= amount;
 }

@@ -30,7 +30,18 @@ public class AtackSystem : MonoBehaviour, IAttacks
     [SerializeField]
     Transform projectileCaster;
 
-    [SerializeField] private int meleeEnergyCost, areaEnergyCost, rangeEnergyCost; 
+    [SerializeField] private int meleeEnergyCost, areaEnergyCost, rangeEnergyCost;
+
+    [SerializeField] private LayerMask enemyLayerMask;
+
+    private MessageSystem messageSystem;
+    ProjectilePulling projectilePulling;
+
+    private void Awake()
+    {
+        messageSystem = FindAnyObjectByType<MessageSystem>();
+        projectilePulling = FindAnyObjectByType<ProjectilePulling>();
+    }
 
     void OnEnable()
     {
@@ -48,6 +59,14 @@ public class AtackSystem : MonoBehaviour, IAttacks
         
         prevEnemy.action.Disable();
         prevEnemy.action.performed -= ctx => SelectNextEnemy(-1);
+    }
+
+    private void ShowMessage(string message)
+    {
+        if(messageSystem != null)
+        {
+            messageSystem.SetMessage(message);
+        }
     }
 
     public void SelectNextEnemy(int selectDirection)
@@ -125,68 +144,70 @@ public class AtackSystem : MonoBehaviour, IAttacks
     {
         print("Send Melee Atack");
 
-        if (GetComponent<EnergySystem>().TrySpendEnergy(meleeEnergyCost))
+        if (!GetComponent<EnergySystem>().TrySpendEnergy(meleeEnergyCost))
         {
-            
+            ShowMessage("No hay suficiente energía");
+        }
+        else
+        {
             Vector3 overlapCenter = transform.position + (transform.forward * melleAttackDistance);
             Collider[] hitColliders = Physics.OverlapSphere(overlapCenter, meleAttackRadius);
 
             foreach (var hitCollider in hitColliders)
             {
                 ExecuteEvents.Execute<IDamage>(hitCollider.gameObject, null, (handler, eventData) => handler.ReceiveDamage(meleeAttackDamage));
-            
             }
         }
-        else
-        {
-            if(FindAnyObjectByType<MessageSystem>() is MessageSystem messageSystem)
-                messageSystem.SetMessage("No hay suficiente energía");
-        }
-
-        
     }
 
     public void SetRangettack()
     {
-        if(FindAnyObjectByType<ProjectilePulling>() is ProjectilePulling projectilePulling)
+        if (enemySelected == null)
         {
-            print("Send Range Atack");
-            if(enemySelected == null)
-            {
-                if(FindAnyObjectByType<MessageSystem>() is MessageSystem messageSystem)
-                    messageSystem.SetMessage("Ningún objetivo seleccionado");
-            }
-            else
-            {
-                projectilePulling.launchProjectile(enemySelected.transform.position, projectileCaster, ProjectilePulling.ProjectileType.Player, rangeAtackDamage);
-                transform.LookAt(enemySelected.transform);
-            }
-            
+            ShowMessage("Ningún objetivo seleccionado");
+            return;
         }
+        else if (projectilePulling == null)
+        {
+            return;
+        }
+        else if (!GetComponent<EnergySystem>().TrySpendEnergy(rangeEnergyCost))
+        {
+            ShowMessage("No hay suficiente energía");
+            return;
+        }
+
+        print("Send Range Atack");
+
+        projectilePulling.launchProjectile(enemySelected.transform.position, projectileCaster, ProjectilePulling.ProjectileType.Player, rangeAtackDamage);
+        transform.LookAt(enemySelected.transform);
     }
 
     public void SetAreaAttack()
     {
-                print("Send area Atack");
+        if (!GetComponent<EnergySystem>().TrySpendEnergy(areaEnergyCost))
+        {
+            ShowMessage("No hay suficiente energía");
+            return;
+        }
+
+        print("Send area Atack");
             
-                if(enemySelected == null)
-                {
-                    StartCoroutine(StartVFXareaAttack(transform));
-                }
-                else
-                {
-                    transform.LookAt(enemySelected.transform);
-                    StartCoroutine(StartVFXareaAttack(enemySelected.transform));
-                    
-                }
-        
+        if(enemySelected == null)
+        {
+            StartCoroutine(StartVFXareaAttack(transform));
+        }
+        else
+        {
+            transform.LookAt(enemySelected.transform);
+            StartCoroutine(StartVFXareaAttack(enemySelected.transform));
+        }
     }
 
     public IEnumerator StartVFXareaAttack(Transform targetforAttack)
     {
         ParticleSystem areaAttackVFX;
         areaAttackVFX = GetComponentInChildren<AttacksVFXcontroller>().AreaAttackVFX;
-        
         
         areaAttackVFX.Stop();
         
@@ -205,7 +226,6 @@ public class AtackSystem : MonoBehaviour, IAttacks
             {
                 SetAreaDamage(areaAttackDamage, targetforAttack.position, areaAttackRadius);
             }
-
            
             yield return new WaitForSeconds(areaDelayBetweenAttacks);
         }
@@ -217,12 +237,11 @@ public class AtackSystem : MonoBehaviour, IAttacks
 
     void SetAreaDamage(float damage,  Vector3 damagePlace, float radius)
     {
-       
-        Collider[] hitColliders = Physics.OverlapSphere(damagePlace, radius);
+        Collider[] hitColliders = Physics.OverlapSphere(damagePlace, radius, enemyLayerMask);
 
         foreach (var hitCollider in hitColliders)
         {
-            ExecuteEvents.Execute<IDamage>(hitCollider.gameObject, null, (handler, eventData) => handler.ReceiveDamage(meleeAttackDamage));
+            ExecuteEvents.Execute<IDamage>(hitCollider.gameObject, null, (handler, eventData) => handler.ReceiveDamage(damage));
             
         }
     }

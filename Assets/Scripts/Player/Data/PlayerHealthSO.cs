@@ -2,54 +2,56 @@ using System;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "PlayerHealth", menuName = "Seed Keeper/Player Health")]
-public class PlayerHealthSO : ScriptableObject
+public class PlayerHealthSO : PlayerAttributeSO
 {
-    [SerializeField] private float maxHealth = 100f;
-    [NonSerialized] private float currentHealth;
-    [NonSerialized] private static readonly string healthKey = "_Player_Health_";
+    [SerializeField] private float maxValue = 100f;
 
-    public float MaxHealth => maxHealth;
-    public float CurrentHealth => currentHealth;
+    [NonSerialized] private float currentValue;
+    [NonSerialized] private static readonly string healthKey = "_Player_Health_";
 
     public void Restart()
     {
-        currentHealth = maxHealth;
+        currentValue = maxValue;
         Save();
     }
 
     public void Initialize()
     {
-        currentHealth = Load();
+        currentValue = Load();
 
-        if(currentHealth <= 0)
+        if(currentValue <= 0)
         {
-            currentHealth = maxHealth;
+            currentValue = maxValue;
         }
+
+        TriggerEvent(currentValue, maxValue);
     }
 
     public void ReceiveDamage(float amount)
     {
-        currentHealth -= amount;
+        currentValue -= amount;
         Update();
+        TriggerEvent(currentValue, maxValue);
     }
 
     public void Heal(float amount)
     {
-        currentHealth += amount;
+        currentValue += amount;
         Update();
+        TriggerEvent(currentValue, maxValue);
     }
 
-    public bool IsDeath() => currentHealth <= 0;
+    public bool IsDeath() => currentValue <= 0;
 
     private void Update()
     {
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        currentValue = Mathf.Clamp(currentValue, 0, maxValue);
         Save();
     }
 
     private void Save()
     {
-        PlayerPrefs.SetFloat(healthKey, currentHealth);
+        PlayerPrefs.SetFloat(healthKey, currentValue);
         PlayerPrefs.Save();
     }
 

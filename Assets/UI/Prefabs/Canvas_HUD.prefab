@@ -1467,7 +1467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SliderBarUI
   sliderBar: {fileID: 3504810039964339013}
   smoothSpeed: 2
-  _barType: 1
+  attribute: {fileID: 11400000, guid: f58e3f439e2df254f8f3ad14c651a984, type: 2}
 --- !u!1 &3377443460282586144
 GameObject:
   m_ObjectHideFlags: 0
@@ -3900,7 +3900,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SliderBarUI
   sliderBar: {fileID: 519073360124986238}
   smoothSpeed: 2
-  _barType: 0
+  attribute: {fileID: 11400000, guid: 90705b318a9d93442b513ca1a74b5197, type: 2}
 --- !u!1 &8751166670063430521
 GameObject:
   m_ObjectHideFlags: 0

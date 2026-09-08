@@ -6,24 +6,22 @@ public class SliderBarUI : MonoBehaviour
     [SerializeField] private Slider sliderBar;
     [Tooltip("Total time it should spend for decreasing the 100% of the slider bar")]
     [SerializeField] private float smoothSpeed = 2f;
+    [SerializeField] private PlayerAttributeSO attribute;
 
     private Coroutine animationCoroutine;
-    
-    public enum barType
+
+    private void OnEnable()
     {
-        healt,
-        energy,
-        
+        attribute.OnChange += UpdateSliderBar;
     }
 
-    public barType _barType;
-
-    public void UpdateSliderBar(float current, float max, barType type)
+    private void OnDisable()
     {
-        if (_barType != type)
-            return;
-        
-        
+        attribute.OnChange -= UpdateSliderBar;
+    }
+
+    private void UpdateSliderBar(float current, float max)
+    {
         if (animationCoroutine != null)
         {
             StopCoroutine(animationCoroutine);
