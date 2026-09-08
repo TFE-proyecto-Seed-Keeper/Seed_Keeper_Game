@@ -8,9 +8,22 @@ public class SliderBarUI : MonoBehaviour
     [SerializeField] private float smoothSpeed = 2f;
 
     private Coroutine animationCoroutine;
-
-    public void UpdateSliderBar(float current, float max)
+    
+    public enum barType
     {
+        healt,
+        energy,
+        
+    }
+
+    public barType _barType;
+
+    public void UpdateSliderBar(float current, float max, barType type)
+    {
+        if (_barType != type)
+            return;
+        
+        
         if (animationCoroutine != null)
         {
             StopCoroutine(animationCoroutine);

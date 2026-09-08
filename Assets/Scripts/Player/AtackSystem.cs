@@ -30,6 +30,8 @@ public class AtackSystem : MonoBehaviour, IAttacks
     [SerializeField]
     Transform projectileCaster;
 
+    [SerializeField] private int meleeEnergyCost, areaEnergyCost, rangeEnergyCost; 
+
     void OnEnable()
     {
         nextEnemy.action.Enable();
@@ -123,14 +125,25 @@ public class AtackSystem : MonoBehaviour, IAttacks
     {
         print("Send Melee Atack");
 
-        Vector3 overlapCenter = transform.position + (transform.forward * melleAttackDistance);
-        Collider[] hitColliders = Physics.OverlapSphere(overlapCenter, meleAttackRadius);
-
-        foreach (var hitCollider in hitColliders)
+        if (GetComponent<EnergySystem>().TrySpendEnergy(meleeEnergyCost))
         {
-            ExecuteEvents.Execute<IDamage>(hitCollider.gameObject, null, (handler, eventData) => handler.ReceiveDamage(meleeAttackDamage));
             
+            Vector3 overlapCenter = transform.position + (transform.forward * melleAttackDistance);
+            Collider[] hitColliders = Physics.OverlapSphere(overlapCenter, meleAttackRadius);
+
+            foreach (var hitCollider in hitColliders)
+            {
+                ExecuteEvents.Execute<IDamage>(hitCollider.gameObject, null, (handler, eventData) => handler.ReceiveDamage(meleeAttackDamage));
+            
+            }
         }
+        else
+        {
+            if(FindAnyObjectByType<MessageSystem>() is MessageSystem messageSystem)
+                messageSystem.SetMessage("No hay suficiente energía");
+        }
+
+        
     }
 
     public void SetRangettack()

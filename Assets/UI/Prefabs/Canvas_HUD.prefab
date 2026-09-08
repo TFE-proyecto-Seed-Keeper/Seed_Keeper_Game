@@ -1467,6 +1467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SliderBarUI
   sliderBar: {fileID: 3504810039964339013}
   smoothSpeed: 2
+  _barType: 1
 --- !u!1 &3377443460282586144
 GameObject:
   m_ObjectHideFlags: 0
@@ -3899,6 +3900,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SliderBarUI
   sliderBar: {fileID: 519073360124986238}
   smoothSpeed: 2
+  _barType: 0
 --- !u!1 &8751166670063430521
 GameObject:
   m_ObjectHideFlags: 0

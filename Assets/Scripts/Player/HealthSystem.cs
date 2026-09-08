@@ -18,6 +18,17 @@ public class HealthSystem : MonoBehaviour, IDamage, IHealable
     {
         playerHealth.Heal(amount);
         OnHealthChanged?.Invoke(playerHealth.CurrentHealth, playerHealth.MaxHealth);
+
+        var sliders = FindObjectsByType<SliderBarUI>();
+
+        if (sliders.Length > 0)
+        {
+            foreach (var slide in sliders)
+            {
+                slide.UpdateSliderBar(playerHealth.CurrentHealth, playerHealth.MaxHealth, SliderBarUI.barType.healt);
+            }
+        }
+
     }
 
     public void ReceiveDamage(float damage)

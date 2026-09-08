@@ -35311,6 +35311,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 855569b645bc20540af70fc8eba671d0, type: 3}
+--- !u!114 &1445049177 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5525544257746035870, guid: 855569b645bc20540af70fc8eba671d0, type: 3}
+  m_PrefabInstance: {fileID: 1445049176}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8d1ff0c3df44848a805dfa13e012c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SliderBarUI
 --- !u!4 &1449211872 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4568972099867453602, guid: 60467653c9024a94cbe4863e1b401660, type: 3}
@@ -47273,6 +47284,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TitiController
       objectReference: {fileID: 0}
+    - target: {fileID: 5872660464288318973, guid: 91e7896f202ba41949b34ca62f3c9ca9, type: 3}
+      propertyPath: OnHealthChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1445049177}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

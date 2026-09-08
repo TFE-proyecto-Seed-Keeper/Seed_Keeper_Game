@@ -34,6 +34,16 @@ public class EnergySystem : MonoBehaviour
         if (trigger)
         {
             OnEnergyChanged?.Invoke(playerEnergy.CurrentEnergyCells, playerEnergy.MaxEnergyCells);
+            
+            var sliders = FindObjectsByType<SliderBarUI>();
+
+            if (sliders.Length > 0)
+            {
+                foreach (var slide in sliders)
+                {
+                    slide.UpdateSliderBar(playerEnergy.CurrentEnergyCells, playerEnergy.MaxEnergyCells, SliderBarUI.barType.energy);
+                }
+            }
         }
     }
 }

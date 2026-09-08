@@ -2256,6 +2256,8 @@ GameObject:
   - component: {fileID: 504124090504987244}
   - component: {fileID: 6049787876070290302}
   - component: {fileID: 4679422234142067689}
+  - component: {fileID: 5872660464288318973}
+  - component: {fileID: 1267056809544598485}
   m_Layer: 3
   m_Name: TitiController
   m_TagString: Player
@@ -2543,13 +2545,16 @@ MonoBehaviour:
   meleAttackRadius: 0.37
   melleAttackDistance: 1
   meleeAttackDamage: 15
-  rangeAtackDamage: 9
+  rangeAtackDamage: 12
   areaAttackDamage: 7
   areaAttackRadius: 2.5
   areaAttackvFXDelay: 0.25
   areaAttackCount: 3
   areaDelayBetweenAttacks: 1
   projectileCaster: {fileID: 7313835288439247989}
+  meleeEnergyCost: 1
+  areaEnergyCost: 6
+  rangeEnergyCost: 3
 --- !u!114 &4679422234142067689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2563,6 +2568,53 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimationController
   jumpAction: {fileID: -1916377846673030204, guid: 4419d82f33d36e848b3ed5af4c8da37e, type: 3}
+--- !u!114 &5872660464288318973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5184271104960397991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df67b7091a920ae4e856d59065b8e3a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
+  playerHealth: {fileID: 11400000, guid: 90705b318a9d93442b513ca1a74b5197, type: 2}
+  OnHealthChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SliderBarUI, Assembly-CSharp
+        m_MethodName: UpdateSliderBar
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1267056809544598485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5184271104960397991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04b9f981c0a03af4f91e011a6826ab9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnergySystem
+  playerEnergy: {fileID: 11400000, guid: f58e3f439e2df254f8f3ad14c651a984, type: 2}
+  OnEnergyChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5243342821346927682
 GameObject:
   m_ObjectHideFlags: 0
