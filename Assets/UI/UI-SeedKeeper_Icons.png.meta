@@ -263,6 +263,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Icon-Seed
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e5002f4d1842af4c988f1914bf54a5c
+      internalID: -247767426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -278,6 +300,7 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Icon-Life: -941037645
+      Icon-Seed: -247767426
       Icon-Tree_1: -702648700
       UI-Seed: -1069408649
       UI-Skill_0: 1364071478
