@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 107148b718b32274d908b44579e1e569, type: 3}
+  m_Name: SeedData
+  m_EditorClassIdentifier: Assembly-CSharp::SeedData
+  seedList:
+  - name: Semilla de Ceiba
+    seedcount: 0
+    seedDprite: {fileID: -247767426, guid: 01b047419f79b7d4d8953741feb1f561, type: 3}
+    seedType: 0
+  - name: Semilla de Guayacan
+    seedcount: 0
+    seedDprite: {fileID: -1069408649, guid: 01b047419f79b7d4d8953741feb1f561, type: 3}
+    seedType: 1
+  - name: Semilla de Totumo
+    seedcount: 0
+    seedDprite: {fileID: 1730099457, guid: 01b047419f79b7d4d8953741feb1f561, type: 3}
+    seedType: 2
