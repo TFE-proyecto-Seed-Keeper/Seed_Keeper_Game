@@ -47292,6 +47292,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7101536346630628060, guid: f13eef49a0868404d879fef33712e3a3, type: 3}
+      propertyPath: seedAddSound
+      value: 
+      objectReference: {fileID: 8300000, guid: f25efd390b155854a93ec49d1654c194, type: 3}
+    - target: {fileID: 7101536346630628060, guid: f13eef49a0868404d879fef33712e3a3, type: 3}
+      propertyPath: seedChangeSound
+      value: 
+      objectReference: {fileID: 8300000, guid: d5af4369438184c43ab580fd3bc0cde0, type: 3}
+    - target: {fileID: 7101536346630628060, guid: f13eef49a0868404d879fef33712e3a3, type: 3}
+      propertyPath: seedRemoveSound
+      value: 
+      objectReference: {fileID: 8300000, guid: acf4ab2877a73e54ca61853b93ee82d3, type: 3}
     - target: {fileID: 7206475319162432597, guid: f13eef49a0868404d879fef33712e3a3, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

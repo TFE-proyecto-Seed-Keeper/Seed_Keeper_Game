@@ -23,14 +23,34 @@ public class SeedSystem : MonoBehaviour
 
     AudioSource audioSource;
 
+    [SerializeField] AudioClip seedChangeSound, seedAddSound, seedRemoveSound;
+
 
     public  void AddSeedType(SeedData.seedType type, int value)
     {
-      
+        SelectSeed(type);
+
+        audioSource.PlayOneShot(seedAddSound);
+
+        seedAdditionalText.rectTransform.localPosition = Vector3.zero;
+
+        seedAdditionalText.rectTransform.DOLocalMoveY(10, 1f);
+
+        seedAdditionalText.text = $"+ {value}";
+
+        seedAdditionalText.DOFade(1, 0.5f).OnComplete(() =>
+        {
+            seedAdditionalText.DOFade(0, 1f);
+        });
+
+        selectedSeed.seedcount += value;
+
+        UpdateSeedUI();
     }
 
     public bool RemoveSeedType(SeedData.seedType type, int value)
     {
+        audioSource.PlayOneShot(seedRemoveSound);
         return false;
     }
 
@@ -39,9 +59,19 @@ public class SeedSystem : MonoBehaviour
         return 0;
     }
 
-    public void SelectSeed()
+    public void SelectSeed(SeedData.seedType type)
     {
-        selectedSeed = seedData.seedList[0];
+        print("Select Seed");
+
+        foreach (var seed in seedData.seedList)
+        {
+            if (seed.seedType == type)
+            {
+                selectedSeed = seed;
+                UpdateSeedUI();
+                return;
+            }
+        }
     }
 
     private void UpdateSeedUI()
@@ -63,8 +93,6 @@ public class SeedSystem : MonoBehaviour
             seedImage.transform.DOScale(Vector3.one, 0.2f);
         });
         seedImage.sprite = selectedSeed.seedDprite;
-
-
     }
 
     void NextSeed(InputAction.CallbackContext context)
@@ -74,7 +102,7 @@ public class SeedSystem : MonoBehaviour
         int  newIndex = seedIndex >= seedData.seedList.Count-1 ? 0 : seedIndex + 1;
         selectedSeed = seedData.seedList[newIndex];
         UpdateSeedUI();
-        audioSource.Play();
+        audioSource.PlayOneShot(seedChangeSound);
 
     }
 
@@ -85,7 +113,7 @@ public class SeedSystem : MonoBehaviour
         int newIndex = seedIndex <= 0 ? seedData.seedList.Count - 1 : seedIndex - 1;
         selectedSeed = seedData.seedList[newIndex];
         UpdateSeedUI();
-        audioSource.Play();
+        audioSource.PlayOneShot(seedChangeSound);
     }
 
 
@@ -115,6 +143,12 @@ public class SeedSystem : MonoBehaviour
     {
         nextSeedAction.action.started -= NextSeed;
         prevSeedAction.action.started -= PrevSeed;
+    }
+
+    [ContextMenu("Test Add Seeds")]
+    public void TestAddSeeds()
+    { 
+        AddSeedType(SeedData.seedType.totumo, 5);
     }
 
 }
