@@ -1339,6 +1339,9 @@ MonoBehaviour:
   seedImage: {fileID: 1918835444856959285}
   nextSeedAction: {fileID: -2320838125720661877, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   prevSeedAction: {fileID: -8681289438918011347, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  seedChangeSound: {fileID: 8300000, guid: d5af4369438184c43ab580fd3bc0cde0, type: 3}
+  seedAddSound: {fileID: 8300000, guid: f25efd390b155854a93ec49d1654c194, type: 3}
+  seedRemoveSound: {fileID: 8300000, guid: acf4ab2877a73e54ca61853b93ee82d3, type: 3}
 --- !u!82 &8216393966424488668
 AudioSource:
   m_ObjectHideFlags: 0

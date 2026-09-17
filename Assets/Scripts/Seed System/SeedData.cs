@@ -11,7 +11,7 @@ public class SeedData : ScriptableObject
     public enum seedType
     {
       ceiba,
-      guayacan,
+      flormorado,
       totumo
     }
 }

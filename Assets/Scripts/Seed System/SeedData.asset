@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SeedData
   seedList:
   - name: Semilla de Ceiba
-    seedcount: 0
-    seedDprite: {fileID: -247767426, guid: 01b047419f79b7d4d8953741feb1f561, type: 3}
+    seedcount: 46
+    seedDprite: {fileID: 1730099457, guid: 01b047419f79b7d4d8953741feb1f561, type: 3}
     seedType: 0
-  - name: Semilla de Guayacan
-    seedcount: 0
-    seedDprite: {fileID: -1069408649, guid: 01b047419f79b7d4d8953741feb1f561, type: 3}
+  - name: Semilla de Flor morado
+    seedcount: 3
+    seedDprite: {fileID: -247767426, guid: 01b047419f79b7d4d8953741feb1f561, type: 3}
     seedType: 1
   - name: Semilla de Totumo
-    seedcount: 0
-    seedDprite: {fileID: 1730099457, guid: 01b047419f79b7d4d8953741feb1f561, type: 3}
+    seedcount: 15
+    seedDprite: {fileID: -1069408649, guid: 01b047419f79b7d4d8953741feb1f561, type: 3}
     seedType: 2
