@@ -2258,6 +2258,7 @@ GameObject:
   - component: {fileID: 4679422234142067689}
   - component: {fileID: 5872660464288318973}
   - component: {fileID: 1267056809544598485}
+  - component: {fileID: 5817672005019018302}
   m_Layer: 3
   m_Name: TitiController
   m_TagString: Player
@@ -2542,19 +2543,23 @@ MonoBehaviour:
   nextEnemy: {fileID: 7476244043514120974, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   prevEnemy: {fileID: -1994693953834959884, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   enemyList: []
+  meleeAttackSound: {fileID: 8300000, guid: 583691d04cee30d418efb16950d00024, type: 3}
+  rangeAttackSound: {fileID: 8300000, guid: d32f80920d9ab6a43896c3b8e0689322, type: 3}
+  areaAttackSound: {fileID: 8300000, guid: 4bdd082b52fe05f44aa1c8aaa09fc84b, type: 3}
+  startAreaAttackSound: {fileID: 8300000, guid: 7ec9d2ae308c022419bf55388ef815d3, type: 3}
   meleAttackRadius: 0.37
   melleAttackDistance: 1
   meleeAttackDamage: 15
   rangeAtackDamage: 12
-  areaAttackDamage: 7
+  areaAttackDamage: 9
   areaAttackRadius: 2.5
   areaAttackvFXDelay: 0.25
   areaAttackCount: 3
-  areaDelayBetweenAttacks: 1
+  areaDelayBetweenAttacks: 0.75
   projectileCaster: {fileID: 7313835288439247989}
   meleeEnergyCost: 1
-  areaEnergyCost: 6
-  rangeEnergyCost: 3
+  areaEnergyCost: 5
+  rangeEnergyCost: 2
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 128
@@ -2600,6 +2605,103 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnergySystem
   playerEnergy: {fileID: 11400000, guid: f58e3f439e2df254f8f3ad14c651a984, type: 2}
+--- !u!82 &5817672005019018302
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5184271104960397991}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 4f84af61801709a4489e8b2283722451, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1.25
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &5243342821346927682
 GameObject:
   m_ObjectHideFlags: 0

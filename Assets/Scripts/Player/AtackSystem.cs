@@ -18,6 +18,11 @@ public class AtackSystem : MonoBehaviour, IAttacks
 
     public List<EnemySystem> enemyList = new List<EnemySystem>();
 
+    AudioSource audioSource;
+
+    [SerializeField] AudioClip meleeAttackSound, rangeAttackSound, areaAttackSound, startAreaAttackSound;
+
+
     [SerializeField]
     float meleAttackRadius, melleAttackDistance, meleeAttackDamage;
 
@@ -41,6 +46,7 @@ public class AtackSystem : MonoBehaviour, IAttacks
     {
         messageSystem = FindAnyObjectByType<MessageSystem>();
         projectilePulling = FindAnyObjectByType<ProjectilePulling>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void OnEnable()
@@ -157,6 +163,8 @@ public class AtackSystem : MonoBehaviour, IAttacks
             {
                 ExecuteEvents.Execute<IDamage>(hitCollider.gameObject, null, (handler, eventData) => handler.ReceiveDamage(meleeAttackDamage));
             }
+
+            audioSource.PlayOneShot(meleeAttackSound);
         }
     }
 
@@ -178,9 +186,10 @@ public class AtackSystem : MonoBehaviour, IAttacks
         }
 
         print("Send Range Atack");
-
+        audioSource.PlayOneShot(rangeAttackSound);
         projectilePulling.launchProjectile(enemySelected.transform.position, projectileCaster, ProjectilePulling.ProjectileType.Player, rangeAtackDamage);
         transform.LookAt(enemySelected.transform);
+        
     }
 
     public void SetAreaAttack()
@@ -192,8 +201,10 @@ public class AtackSystem : MonoBehaviour, IAttacks
         }
 
         print("Send area Atack");
-            
-        if(enemySelected == null)
+        
+            audioSource.PlayOneShot(startAreaAttackSound);
+
+        if (enemySelected == null)
         {
             StartCoroutine(StartVFXareaAttack(transform));
         }
@@ -217,19 +228,21 @@ public class AtackSystem : MonoBehaviour, IAttacks
         yield return new WaitForSeconds(areaAttackvFXDelay);
         
         areaAttackVFX.Play();
-        
+       
+
         yield return new WaitForSeconds(areaDelayBetweenAttacks);
 
         for (int i = 0; i < areaAttackCount; i++)
         {
             if (targetforAttack)
             {
+                audioSource.PlayOneShot(areaAttackSound);
                 SetAreaDamage(areaAttackDamage, targetforAttack.position, areaAttackRadius);
             }
            
             yield return new WaitForSeconds(areaDelayBetweenAttacks);
         }
-        
+
         areaAttackVFX.transform.SetParent(areaAttackVFX.transform);
         areaAttackVFX.transform.localPosition = Vector3.zero;
         
@@ -243,6 +256,7 @@ public class AtackSystem : MonoBehaviour, IAttacks
         {
             ExecuteEvents.Execute<IDamage>(hitCollider.gameObject, null, (handler, eventData) => handler.ReceiveDamage(damage));
             
+
         }
     }
 }

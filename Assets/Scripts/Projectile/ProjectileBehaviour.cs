@@ -46,6 +46,7 @@ public class ProjectileBehaviour : MonoBehaviour
     
     void LaunhProjectile()
     {
+        GetComponent<AudioSource>().Play();
         transform.position = origin.position;
         gameObject.SetActive(true);
         projectileParticles.Play();
@@ -94,6 +95,7 @@ public class ProjectileBehaviour : MonoBehaviour
                 CancelInvoke("ResetProjectile");
                 SetDamage(ProjectileDamage);
                 state = false;
+                GetComponent<AudioSource>().Stop();
             }
         }
       
