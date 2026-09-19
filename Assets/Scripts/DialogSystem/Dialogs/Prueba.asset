@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e243e41a1b931a04ca6532938d5c8350, type: 3}
+  m_Name: Prueba
+  m_EditorClassIdentifier: Assembly-CSharp::DialogData
+  dialogName: Cartel sin vida
+  dialogLines:
+  - Este es un dialogo de prueba
+  - Para ver como funciona todo
+  - No me dejes en el juego al final
