@@ -36,7 +36,15 @@ namespace StarterAssets
 
 		public void OnJump(InputValue value)
 		{
-			JumpInput(value.isPressed);
+            if (FindAnyObjectByType<DialogsManager>())
+            {
+                if (DialogsManager.instance.GetInteractoState() || DialogsManager.instance.GetDialogUiState())
+                {
+                    return;
+                }
+
+            }
+            JumpInput(value.isPressed);
 		}
 
 		public void OnSprint(InputValue value)

@@ -34,7 +34,17 @@ public class PlayerAnimationController : MonoBehaviour, IAttacks
 
     public void SetJumpAttack(InputAction.CallbackContext context)
     {
-        if(thirdPersonController.Grounded)
+        if (FindAnyObjectByType<DialogsManager>())
+        {
+            if (DialogsManager.instance.GetInteractoState() || DialogsManager.instance.GetDialogUiState())
+            {
+                return;
+            }
+
+        }
+
+
+        if (thirdPersonController.Grounded)
             animator.SetTrigger("jump");
     }
 

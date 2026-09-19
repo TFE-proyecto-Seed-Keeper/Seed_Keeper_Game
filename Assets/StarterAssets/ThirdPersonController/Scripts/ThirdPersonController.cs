@@ -180,6 +180,7 @@ namespace StarterAssets
 
         private void GroundedCheck()
         {
+
             // set sphere position, with offset
             Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - GroundedOffset,
                 transform.position.z);
@@ -284,6 +285,7 @@ namespace StarterAssets
 
         private void JumpAndGravity()
         {
+
             if (Grounded)
             {
                 // reset the fall timeout timer
