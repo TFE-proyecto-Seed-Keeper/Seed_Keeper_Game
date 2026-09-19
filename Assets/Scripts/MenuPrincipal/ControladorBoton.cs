@@ -23,6 +23,6 @@ public class ControladorBoton : MonoBehaviour
         yield return new WaitForSeconds(segundosDeEspera);
 
         // Enciende el menú
-        miMenu.SetActive(true);
+        //miMenu.SetActive(true);
     }
 }
