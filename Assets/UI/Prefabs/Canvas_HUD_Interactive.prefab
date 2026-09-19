@@ -740,8 +740,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: SOTOBOSQUE
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a23730b4fa392694bb141f4105e4f9fd, type: 2}
-  m_sharedMaterial: {fileID: 9093383550605032533, guid: a23730b4fa392694bb141f4105e4f9fd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cb23f8f644b9b844cb95150b1470f953, type: 2}
+  m_sharedMaterial: {fileID: 9093383550605032533, guid: cb23f8f644b9b844cb95150b1470f953, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

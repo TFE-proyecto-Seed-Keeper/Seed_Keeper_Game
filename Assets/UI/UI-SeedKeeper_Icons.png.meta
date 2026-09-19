@@ -223,8 +223,8 @@ TextureImporter:
       name: Icon-Life
       rect:
         serializedVersion: 2
-        x: 0
-        y: 192
+        x: 448
+        y: 0
         width: 64
         height: 64
       alignment: 0
@@ -264,7 +264,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Icon-Seed
+      name: Icon-Seed-Generica
       rect:
         serializedVersion: 2
         x: 256
@@ -285,6 +285,138 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Icon-Seed-Yarumo
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e16290d79309fc24db8527888bbcd9a0
+      internalID: -2008906866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon-Seed-Ceiba
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80ea69f7aaf886640b3d615583c71803
+      internalID: 1623273050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon-Seed-Flormorado
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68010c7a9f48f354cb423d7eadbfeae5
+      internalID: -1853377327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon-Seed-Diomate
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae33aa9dd38850f47b8d33045a5882c7
+      internalID: -766067535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon-Seed-Bromelia
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14369997de8572448b6db9829280eaa4
+      internalID: 1685431057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon-Seed-Totumo
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a755792958fd5d748844d687dc21425f
+      internalID: -1050402518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -300,7 +432,14 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Icon-Life: -941037645
-      Icon-Seed: -247767426
+      Icon-Seed-Bromelia: 1685431057
+      Icon-Seed-Ceiba: 1623273050
+      Icon-Seed-Diomate: -766067535
+      Icon-Seed-Flormorado: -1853377327
+      Icon-Seed-Generica: -247767426
+      Icon-Seed-Icon-Seed-Normal: 1623273050
+      Icon-Seed-Totumo: -1050402518
+      Icon-Seed-Yarumo: -2008906866
       Icon-Tree_1: -702648700
       UI-Seed: -1069408649
       UI-Skill_0: 1364071478
