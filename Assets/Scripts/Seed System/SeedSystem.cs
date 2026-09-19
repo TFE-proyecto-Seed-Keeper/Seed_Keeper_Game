@@ -1,8 +1,6 @@
 using DG.Tweening;
-
 using TMPro;
 using UnityEngine;
-using UnityEngine.Audio;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
