@@ -10,10 +10,10 @@ public class ControladorBoton : MonoBehaviour
 
     public void ActivarTodo()
     {
-        // 1. Reproduce la animación inmediatamente
+        // 1. Reproduce la animaciÃ³n inmediatamente
         miAnimator.Play(nombreDeLaAnimacion);
 
-        // 2. Inicia el cronómetro
+        // 2. Inicia el cronÃ³metro
         StartCoroutine(Cronometro());
     }
 
@@ -22,7 +22,7 @@ public class ControladorBoton : MonoBehaviour
         // Espera los segundos que le indiques
         yield return new WaitForSeconds(segundosDeEspera);
 
-        // Enciende el menú
+        // Enciende el menÃº
         //miMenu.SetActive(true);
     }
 }

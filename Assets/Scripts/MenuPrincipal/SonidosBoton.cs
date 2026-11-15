@@ -3,14 +3,14 @@ using UnityEngine.EventSystems; // Necesario para detectar la UI
 
 public class SonidosBoton : MonoBehaviour, ISelectHandler, IPointerEnterHandler, IPointerClickHandler, ISubmitHandler
 {
-    [Header("Arrastra aquí el EventSystem")]
+    [Header("Arrastra aqui el EventSystem")]
     public AudioSource reproductorGlobal;
 
     [Header("Tus Sonidos")]
     public AudioClip sonidoNavegar;
     public AudioClip sonidoClic;
 
-    // Se ejecuta al pasar el ratón por encima
+    // Se ejecuta al pasar el ratï¿½n por encima
     public void OnPointerEnter(PointerEventData eventData)
     {
         ReproducirNavegar();
@@ -22,13 +22,13 @@ public class SonidosBoton : MonoBehaviour, ISelectHandler, IPointerEnterHandler,
         ReproducirNavegar();
     }
 
-    // Se ejecuta al hacer Clic con el ratón
+    // Se ejecuta al hacer Clic con el ratï¿½n
     public void OnPointerClick(PointerEventData eventData)
     {
         ReproducirClic();
     }
 
-    // Se ejecuta al oprimir Enter, la tecla E, o el botón A del mando
+    // Se ejecuta al oprimir Enter, la tecla E, o el botï¿½n A del mando
     public void OnSubmit(BaseEventData eventData)
     {
         ReproducirClic();

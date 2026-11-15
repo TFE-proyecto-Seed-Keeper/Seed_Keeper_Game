@@ -9,7 +9,7 @@ public class MenuAtras : MonoBehaviour
     public Button botonAtrasEnPantalla;
     public GameObject botonPrincipal;
 
-    [Header("Sonido de Atrás")]
+    [Header("Sonido de AtrÃ¡s")]
     public AudioSource reproductorGlobal;
     public AudioClip sonidoAtras;
 
@@ -18,7 +18,7 @@ public class MenuAtras : MonoBehaviour
 
     private void EjecutarAtras(InputAction.CallbackContext contexto)
     {
-        // Reproducimos el sonido especial de "Atrás"
+        // Reproducimos el sonido especial de "Atrï¿½s"
         if (reproductorGlobal != null && sonidoAtras != null)
         {
             reproductorGlobal.PlayOneShot(sonidoAtras);

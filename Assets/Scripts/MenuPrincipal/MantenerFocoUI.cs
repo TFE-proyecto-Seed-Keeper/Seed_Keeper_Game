@@ -7,21 +7,21 @@ public class MantenerFocoUI : MonoBehaviour
 
     void Start()
     {
-        // Guarda el primer botón que configuraste en el EventSystem al iniciar
+        // Guarda el primer botï¿½n que configuraste en el EventSystem al iniciar
         ultimoSeleccionado = EventSystem.current.firstSelectedGameObject;
     }
 
     void Update()
     {
-        // Si el jugador tiene un botón seleccionado actualmente, lo guardamos en la memoria
-        if (EventSystem.current.currentSelectedGameObject != null)
+        // Si el jugador tiene un botÃ³n seleccionado actualmente, lo guardamos en la memoria
+        if (EventSystem.current.currentSelectedGameObject)
         {
             ultimoSeleccionado = EventSystem.current.currentSelectedGameObject;
         }
-        // Si el jugador hizo clic afuera y la selección se volvió nula (vacía)...
-        else if (ultimoSeleccionado != null)
+        // Si el jugador hizo clic afuera y la selecciÃ³n se volvio nula (vacia)...
+        else if (ultimoSeleccionado)
         {
-            // Forzamos al sistema a volver a seleccionar el último botón guardado
+            // Forzamos al sistema a volver a seleccionar el ultimo botÃ³n guardado
             EventSystem.current.SetSelectedGameObject(ultimoSeleccionado);
         }
     }
