@@ -22,7 +22,7 @@ public class Seed
     public string name;
     public int seedcount;
 
-    public Sprite seedDprite;
+    public Sprite seedSprite;
 
     public SeedData.seedType seedType;
 

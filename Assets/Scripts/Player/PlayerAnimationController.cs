@@ -34,8 +34,11 @@ public class PlayerAnimationController : MonoBehaviour, IAttacks
 
     public void SetJumpAttack(InputAction.CallbackContext context)
     {
-        if (FindAnyObjectByType<DialogsManager>())
+        if (FindAnyObjectByType<Interactor>())
         {
+            Debug.Log("Interactor found, skipping jump animation.");
+            return;
+
             if (DialogsManager.instance.GetInteractoState() || DialogsManager.instance.GetDialogUiState())
             {
                 return;

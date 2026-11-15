@@ -46,16 +46,53 @@ public class SeedSystem : MonoBehaviour
         UpdateSeedUI();
     }
 
-    public bool RemoveSeedType(SeedData.seedType type, int value)
+    public void RemoveSeedType(SeedData.seedType type, int value)
     {
+        SelectSeed(type);
+
         audioSource.PlayOneShot(seedRemoveSound);
-        return false;
+
+        seedAdditionalText.rectTransform.localPosition = Vector3.zero;
+
+        seedAdditionalText.rectTransform.DOLocalMoveY(10, 1f);
+
+        seedAdditionalText.text = $"- {value}";
+
+        seedAdditionalText.DOFade(1, 0.5f).OnComplete(() =>
+        {
+            seedAdditionalText.DOFade(0, 1f);
+        });
+
+        selectedSeed.seedcount -= value;
+
+        UpdateSeedUI();
+
     }
 
-    public int GetSeedType(SeedData.seedType type)
+    public int GetSeedTypeCount(SeedData.seedType type)
     {
+        foreach (var item in seedData.seedList)
+        {
+            if(item.seedType == type)
+            {
+                return item.seedcount;
+            }
+        }
         return 0;
     }
+
+    public Seed GetSeedData(SeedData.seedType type)
+    {
+        foreach (var item in seedData.seedList)
+        {
+            if (item.seedType == type)
+            {
+                return item;
+            }
+        }
+        return null;
+    }
+
 
     public void SelectSeed(SeedData.seedType type)
     {
@@ -90,7 +127,7 @@ public class SeedSystem : MonoBehaviour
         {
             seedImage.transform.DOScale(Vector3.one, 0.2f);
         });
-        seedImage.sprite = selectedSeed.seedDprite;
+        seedImage.sprite = selectedSeed.seedSprite;
     }
 
     void NextSeed(InputAction.CallbackContext context)

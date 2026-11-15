@@ -1,6 +1,7 @@
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 #endif
 
 namespace StarterAssets
@@ -36,8 +37,11 @@ namespace StarterAssets
 
 		public void OnJump(InputValue value)
 		{
-            if (FindAnyObjectByType<DialogsManager>())
+            if (FindAnyObjectByType<Interactor>())
             {
+				Debug.Log("Interactor found, skipping jump input.");
+                return;
+
                 if (DialogsManager.instance.GetInteractoState() || DialogsManager.instance.GetDialogUiState())
                 {
                     return;
