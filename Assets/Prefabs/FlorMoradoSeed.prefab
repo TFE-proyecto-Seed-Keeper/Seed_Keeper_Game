@@ -151,7 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SeedAsset
   seedValue: 1
   seedType: 1
-  seedActive: 1
+  active: 1
 --- !u!1 &7691029389311331817
 GameObject:
   m_ObjectHideFlags: 0
