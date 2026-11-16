@@ -28099,13 +28099,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1016459133}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.26041883, y: -0.4768585, z: 0.15035288, w: 0.8259431}
-  m_LocalPosition: {x: 80.82904, y: 15.537562, z: 206.49234}
+  m_LocalRotation: {x: 0.09803687, y: -0.49678594, z: 0.056601614, w: 0.8604585}
+  m_LocalPosition: {x: 81.50116, y: 13.794435, z: 206.10431}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 217423528}
-  m_LocalEulerAnglesHint: {x: 35, y: -60, z: 0}
+  m_LocalEulerAnglesHint: {x: 13, y: -60, z: 0}
 --- !u!114 &1016459135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42919,6 +42919,14 @@ PrefabInstance:
     - target: {fileID: 5184271104960397991, guid: 91e7896f202ba41949b34ca62f3c9ca9, type: 3}
       propertyPath: m_Name
       value: TitiController
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502657715878287477, guid: 91e7896f202ba41949b34ca62f3c9ca9, type: 3}
+      propertyPath: jump
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502657715878287477, guid: 91e7896f202ba41949b34ca62f3c9ca9, type: 3}
+      propertyPath: sprint
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
