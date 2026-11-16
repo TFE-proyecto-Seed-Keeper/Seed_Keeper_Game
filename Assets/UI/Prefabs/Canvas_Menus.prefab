@@ -4238,7 +4238,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1613680937546790059}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9baeb79e555a8fb48ba19c35d939a485, type: 3}
   m_Name: 
@@ -10744,7 +10744,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 800, y: -902.2951}
+  m_AnchoredPosition: {x: 800, y: -839.89343}
   m_SizeDelta: {x: 1600, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2101870796639420264
@@ -15408,7 +15408,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6110187926759235611}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9baeb79e555a8fb48ba19c35d939a485, type: 3}
   m_Name: 
@@ -18400,6 +18400,8 @@ GameObject:
   - component: {fileID: 508868557545370394}
   - component: {fileID: 2511887680858552087}
   - component: {fileID: 8997302739265202185}
+  - component: {fileID: 2929204606251698147}
+  - component: {fileID: 16004088061220382}
   m_Layer: 5
   m_Name: ButtonCancel
   m_TagString: Untagged
@@ -18593,6 +18595,37 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &2929204606251698147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7393295411764150023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc482ba4aad7af543b1f3eedcaa496e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SonidosBoton
+  reproductorGlobal: {fileID: 0}
+  sonidoNavegar: {fileID: 8300000, guid: bf4950668859ea040b6fed4a52150b5c, type: 3}
+  sonidoClic: {fileID: 8300000, guid: 2779766f2865c8a42bc2b0603bcc5417, type: 3}
+--- !u!114 &16004088061220382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7393295411764150023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9baeb79e555a8fb48ba19c35d939a485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ControladorBoton
+  miAnimator: {fileID: 7431931600189660359}
+  miMenu: {fileID: 0}
+  nombreDeLaAnimacion: AnimationMenu_Open
+  segundosDeEspera: 0.35
 --- !u!1 &7462401981728401672
 GameObject:
   m_ObjectHideFlags: 0
@@ -20619,6 +20652,8 @@ GameObject:
   - component: {fileID: 3589793959178774308}
   - component: {fileID: 5929746619910359337}
   - component: {fileID: 733093294504965777}
+  - component: {fileID: 5976946846059643030}
+  - component: {fileID: 4029933524589927894}
   m_Layer: 5
   m_Name: ButtonConfirm
   m_TagString: Untagged
@@ -20788,6 +20823,37 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &5976946846059643030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8794852036561761042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc482ba4aad7af543b1f3eedcaa496e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SonidosBoton
+  reproductorGlobal: {fileID: 0}
+  sonidoNavegar: {fileID: 8300000, guid: bf4950668859ea040b6fed4a52150b5c, type: 3}
+  sonidoClic: {fileID: 8300000, guid: 2779766f2865c8a42bc2b0603bcc5417, type: 3}
+--- !u!114 &4029933524589927894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8794852036561761042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9baeb79e555a8fb48ba19c35d939a485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ControladorBoton
+  miAnimator: {fileID: 7431931600189660359}
+  miMenu: {fileID: 0}
+  nombreDeLaAnimacion: AnimationMenu_Open
+  segundosDeEspera: 0.35
 --- !u!1 &8820353288072185044
 GameObject:
   m_ObjectHideFlags: 0
