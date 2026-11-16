@@ -921,15 +921,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Unlocker
   interactor: {fileID: 5513968537185505435}
   titleText: {fileID: 6720307788015655094}
+  costText: {fileID: 3669814302184517289}
   seedImage: {fileID: 4687490649725397941}
   interactionAction: {fileID: -1916377846673030204, guid: 4419d82f33d36e848b3ed5af4c8da37e, type: 3}
   SuccessSound: {fileID: 8300000, guid: 24bd82c0f3bde4243a935a9a0b94cf29, type: 3}
   failSound: {fileID: 8300000, guid: e6730ba9e0b0ce54d8c247b58707ca81, type: 3}
   clickSound: {fileID: 8300000, guid: 9e70b81d235fd3644878e4d47d76259e, type: 3}
-  particles: {fileID: 748467240692584097}
-  GameobjectBlocker: {fileID: 7514451429313757352}
   seedAsset: 0
   seedCost: 20
+  onUnlock:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7514451429313757352}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 748467240692584097}
+        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!82 &2211272565382445807
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1198,7 +1224,7 @@ GameObject:
   - component: {fileID: 3669814302184517289}
   - component: {fileID: 5106740314587171631}
   m_Layer: 5
-  m_Name: Text (2)
+  m_Name: seedCost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

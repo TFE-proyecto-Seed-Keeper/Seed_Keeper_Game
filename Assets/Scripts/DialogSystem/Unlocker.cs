@@ -3,7 +3,8 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
-using static SeedData;
+using UnityEngine.Events;
+
 
 public class Unlocker : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class Unlocker : MonoBehaviour
     private GameObject interactor;
 
     [SerializeField]
-    TMPro.TextMeshProUGUI titleText;
+    TMPro.TextMeshProUGUI titleText, costText;
 
     [SerializeField]
     Image seedImage;
@@ -23,18 +24,16 @@ public class Unlocker : MonoBehaviour
     [SerializeField]
     AudioClip SuccessSound, failSound, clickSound;
 
-    [SerializeField]
-    ParticleSystem particles;
-
-    [SerializeField]
-    GameObject GameobjectBlocker;
 
     Collider[] collidersToDisable;
 
     public SeedData.seedType seedAsset;
 
+
     [SerializeField]
     int seedCost;
+
+    public UnityEvent onUnlock;
 
     private void Awake()
     {
@@ -58,6 +57,7 @@ public class Unlocker : MonoBehaviour
         {
             var data = seedSystem.GetSeedData(seedAsset);
              titleText.text = data.name;
+            costText.text = "x "+seedCost.ToString();
             seedImage.sprite = data.seedSprite;
         }
 
@@ -118,7 +118,7 @@ public class Unlocker : MonoBehaviour
     {
         audioSource.PlayOneShot(SuccessSound);
 
-        GameobjectBlocker.SetActive(false);
+        
 
         DisableAction();
 
@@ -126,7 +126,8 @@ public class Unlocker : MonoBehaviour
         {
             item.enabled = false;
         }
-        particles.Play();
+
+        onUnlock.Invoke();
 
         interactor.SetActive(false);
     }
