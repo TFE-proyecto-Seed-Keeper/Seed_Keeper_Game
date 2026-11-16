@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2329a48beaa70a44291ac1ecfe7faf3e, type: 3}
   m_Name: PlayerEnergy
   m_EditorClassIdentifier: Assembly-CSharp::PlayerEnergySO
-  maxEnergyCells: 7
-  regenerationRate: 2
+  maxValue: 7
+  regenerationRate: 3
