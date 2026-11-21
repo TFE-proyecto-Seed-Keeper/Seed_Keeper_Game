@@ -1,7 +1,9 @@
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+
 
 public class EnemySystem : MonoBehaviour, IDamage
 {
@@ -15,7 +17,7 @@ public class EnemySystem : MonoBehaviour, IDamage
     Slider sliderHealt;
 
     [SerializeField]
-    ParticleSystem deadParticles;
+    ParticleSystem deadParticles, atatck_1_particles;
 
     [SerializeField]
     GameObject Model3D;
@@ -27,10 +29,10 @@ public class EnemySystem : MonoBehaviour, IDamage
     public bool isalive = true;
 
     [SerializeField]
-    bool isDummy;
+    GameObject instanceObject;
 
     [SerializeField]
-    GameObject instanceObject;
+    float damageAmount, damageRange;
 
     public UnityEvent EnemydDead;
 
@@ -46,8 +48,33 @@ public class EnemySystem : MonoBehaviour, IDamage
     {
         indicator.SetActive(true);
     }
+    
+    public void SetAttack_1()
+    {
+       animator.SetTrigger("attack_1");
+    }
 
-     public void RelaseEnemy()
+    public void InvokeAttack1()
+    {
+        atatck_1_particles.Play();
+
+        Physics.OverlapSphere(atatck_1_particles.transform.position, damageRange).ToList().ForEach(x =>
+        {
+            if (x.CompareTag("Player") && x.TryGetComponent<IDamage>(out IDamage damage))
+            {
+                damage.ReceiveDamage(damageAmount);
+            }
+        });
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(atatck_1_particles.transform.position, damageRange);
+        Gizmos.DrawSphere(atatck_1_particles.transform.position, damageRange);
+    }
+ 
+
+    public void RelaseEnemy()
     {
         indicator.SetActive(false);
     }

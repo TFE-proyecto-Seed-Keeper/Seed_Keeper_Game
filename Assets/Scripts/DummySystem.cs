@@ -1,0 +1,96 @@
+using System.Collections;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
+
+public class DummySystem : MonoBehaviour, IDamage
+{
+    [SerializeField]
+    GameObject indicator;
+
+    [SerializeField]
+    Animator animator;
+
+    [SerializeField]
+    Slider sliderHealt;
+
+    [SerializeField]
+    ParticleSystem deadParticles;
+
+    [SerializeField]
+    GameObject Model3D;
+
+    [SerializeField]
+    float healt;
+
+    float initialHealt;
+    public bool isalive = true;
+
+    [SerializeField]
+    GameObject instanceObject;
+
+    public UnityEvent EnemydDead;
+
+    private void OnEnable()
+    {
+        initialHealt = healt;
+        sliderHealt.maxValue = healt;
+        sliderHealt.value = healt;
+    }
+
+
+    public void SetActiveEnemy()
+    {
+        indicator.SetActive(true);
+    }
+
+     public void RelaseEnemy()
+    {
+        indicator.SetActive(false);
+    }
+
+    public void ReceiveDamage(float damage)
+    {
+        if (!isalive)
+            return;
+
+        print("recieve Melee Atack o n Enemy amount "+damage);
+        animator.SetTrigger("damage");
+
+
+
+        if(GetComponentInChildren<TextParticleEmitter>() is TextParticleEmitter textEmitter)
+        {
+            textEmitter.EmitDamageText(damage);
+        }
+
+        healt -= damage;
+        sliderHealt.value = healt;
+
+        if (healt <= 0)
+        {
+            animator.SetTrigger("die");
+            StartCoroutine(SetDead());
+        }
+    }
+
+    IEnumerator SetDead()
+    {
+        isalive = false;
+        
+        if (FindAnyObjectByType<AtackSystem>() is AtackSystem atackSystem)
+        {
+            atackSystem.SelectNextEnemy(1);
+        }
+
+        yield return new WaitForSeconds(2f);
+        deadParticles.Play();
+        yield return new WaitForSeconds(0.15f);
+        Model3D.SetActive(false);
+        yield return new WaitForSeconds(0.75f);
+        EnemydDead.Invoke();
+        yield return new WaitForSeconds(0.15f);
+        Destroy(gameObject);
+       
+    }
+}

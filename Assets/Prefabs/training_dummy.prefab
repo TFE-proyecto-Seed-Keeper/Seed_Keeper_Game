@@ -20210,7 +20210,7 @@ Animator:
   m_GameObject: {fileID: 7602922587098391180}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 868018d82fb6a3d49be1b63b6bb94f4f, type: 2}
+  m_Controller: {fileID: 9100000, guid: b9044d4d40b8bc54980989b34d8fb795, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -20262,7 +20262,6 @@ MonoBehaviour:
   Model3D: {fileID: 1622633578223683357}
   healt: 100
   isalive: 1
-  isDummy: 0
   instanceObject: {fileID: 1622633578223683357}
   EnemydDead:
     m_PersistentCalls:
@@ -25468,7 +25467,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2369166315056742975, guid: 8511a0eb847d6e64ab6ddf2febce8d25, type: 3}
       propertyPath: m_text
-      value: 
+      value: '100
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 2369166315056742975, guid: 8511a0eb847d6e64ab6ddf2febce8d25, type: 3}
       propertyPath: m_fontSize

@@ -110,7 +110,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Training_dummy-control
+  m_Name: Dummy
   serializedVersion: 6
   m_AnimatorParameters:
   - m_Name: Blend
