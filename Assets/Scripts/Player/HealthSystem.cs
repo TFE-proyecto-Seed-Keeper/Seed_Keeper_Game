@@ -1,11 +1,14 @@
+using System;
 using UnityEngine;
-using UnityEngine.Events;
+//using UnityEngine.Events;
 
 public class HealthSystem : MonoBehaviour, IDamage, IHealable
 {
     [SerializeField] private PlayerHealthSO playerHealth;
 
-    public UnityEvent onDeath;
+    public static event Action<float> OnDead;
+
+    //public UnityEvent onDeath;
 
     private void Start()
     {
@@ -23,7 +26,8 @@ public class HealthSystem : MonoBehaviour, IDamage, IHealable
 
         if (playerHealth.IsDeath())
         {
-            onDeath?.Invoke();
+
+            OnDead?.Invoke(playerHealth.CurrentValue);
         }
     }
 }

@@ -9,4 +9,7 @@ public class GameSettingsSO : ScriptableObject
     [Header("Seed settings")]
     public bool useSeed;
     public int seed;
+
+    [Header("Level settings")]
+    public bool firstLoad;
 }

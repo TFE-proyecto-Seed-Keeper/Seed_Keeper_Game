@@ -9,49 +9,51 @@ public class PlayerHealthSO : PlayerAttributeSO
     [NonSerialized] private float currentValue;
     [NonSerialized] private static readonly string healthKey = "_Player_Health_";
 
+    public float CurrentValue { get => currentValue; set => currentValue = value; }
+
     public void Restart()
     {
-        currentValue = maxValue;
+        CurrentValue = maxValue;
         Save();
     }
 
     public void Initialize()
     {
-        currentValue = Load();
+        CurrentValue = Load();
 
-        if(currentValue <= 0)
+        if(CurrentValue <= 0)
         {
-            currentValue = maxValue;
+            CurrentValue = maxValue;
         }
 
-        TriggerEvent(currentValue, maxValue);
+        TriggerEvent(CurrentValue, maxValue);
     }
 
     public void ReceiveDamage(float amount)
     {
-        currentValue -= amount;
+        CurrentValue -= amount;
         Update();
-        TriggerEvent(currentValue, maxValue);
+        TriggerEvent(CurrentValue, maxValue);
     }
 
     public void Heal(float amount)
     {
-        currentValue += amount;
+        CurrentValue += amount;
         Update();
-        TriggerEvent(currentValue, maxValue);
+        TriggerEvent(CurrentValue, maxValue);
     }
 
-    public bool IsDeath() => currentValue <= 0;
+    public bool IsDeath() => CurrentValue <= 0;
 
     private void Update()
     {
-        currentValue = Mathf.Clamp(currentValue, 0, maxValue);
+        CurrentValue = Mathf.Clamp(CurrentValue, 0, maxValue);
         Save();
     }
 
     private void Save()
     {
-        PlayerPrefs.SetFloat(healthKey, currentValue);
+        PlayerPrefs.SetFloat(healthKey, CurrentValue);
         PlayerPrefs.Save();
     }
 
