@@ -21,10 +21,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     bool testMode = false;
 
-    private void Awake()
+    private void Start()
     {
         SetGameSettings();
-
     }
 
     private void SetGameSettings()
