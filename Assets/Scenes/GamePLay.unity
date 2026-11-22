@@ -58904,6 +58904,38 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5184271104960397991, guid: 91e7896f202ba41949b34ca62f3c9ca9, type: 3}
   m_PrefabInstance: {fileID: 6379724662306624272}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &2103471606 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5817672005019018302, guid: 91e7896f202ba41949b34ca62f3c9ca9, type: 3}
+  m_PrefabInstance: {fileID: 6379724662306624272}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2103471618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103471603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e47c63dee3907fb4cac4969b0ba61736, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamageListener
+  OnDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2103471606}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: a38a8007eba77e4428e462f6838603fd, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &2104007097 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6800356293229332167, guid: 416274a0a63517c40b315a92856eef88, type: 3}
@@ -59749,26 +59781,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 576250773483216163, guid: 09830e63230bb5f4381d6a79887814a3, type: 3}
-      propertyPath: m_Interactable
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1076249678271132723, guid: 09830e63230bb5f4381d6a79887814a3, type: 3}
-      propertyPath: m_Value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1076249678271132723, guid: 09830e63230bb5f4381d6a79887814a3, type: 3}
-      propertyPath: m_MaxValue
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1076249678271132723, guid: 09830e63230bb5f4381d6a79887814a3, type: 3}
-      propertyPath: m_Interactable
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1076249678271132723, guid: 09830e63230bb5f4381d6a79887814a3, type: 3}
-      propertyPath: m_WholeNumbers
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1542269470362094754, guid: 09830e63230bb5f4381d6a79887814a3, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -59988,10 +60000,6 @@ PrefabInstance:
     - target: {fileID: 9054098170569966508, guid: 09830e63230bb5f4381d6a79887814a3, type: 3}
       propertyPath: m_Name
       value: UI_Systems
-      objectReference: {fileID: 0}
-    - target: {fileID: 9054098170569966508, guid: 09830e63230bb5f4381d6a79887814a3, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9162053590413226261, guid: 09830e63230bb5f4381d6a79887814a3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -61296,7 +61304,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5184271104960397991, guid: 91e7896f202ba41949b34ca62f3c9ca9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2103471618}
   m_SourcePrefab: {fileID: 100100000, guid: 91e7896f202ba41949b34ca62f3c9ca9, type: 3}
 --- !u!222 &6697525275122654930
 CanvasRenderer:
