@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PlayerEnergy
   m_EditorClassIdentifier: Assembly-CSharp::PlayerEnergySO
   maxValue: 7
-  regenerationRate: 3
+  regenerationRate: 0.75

@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "PlayerHealth", menuName = "Seed Keeper/Player Health")]
@@ -6,11 +7,12 @@ public class PlayerHealthSO : PlayerAttributeSO
 {
     [SerializeField] private float maxValue = 100f;
 
-    [NonSerialized] private float currentValue;
+    [SerializeField] private float currentValue;
     [NonSerialized] private static readonly string healthKey = "_Player_Health_";
 
     public float CurrentValue { get => currentValue; set => currentValue = value; }
 
+    
     public void Restart()
     {
         CurrentValue = maxValue;
@@ -19,9 +21,10 @@ public class PlayerHealthSO : PlayerAttributeSO
 
     public void Initialize()
     {
+
         CurrentValue = Load();
 
-        if(CurrentValue <= 0)
+        if(CurrentValue <= maxValue)
         {
             CurrentValue = maxValue;
         }

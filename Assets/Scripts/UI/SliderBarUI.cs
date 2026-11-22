@@ -10,6 +10,7 @@ public class SliderBarUI : MonoBehaviour
 
     private Coroutine animationCoroutine;
 
+
     private void OnEnable()
     {
         attribute.OnChange += UpdateSliderBar;
@@ -22,6 +23,8 @@ public class SliderBarUI : MonoBehaviour
 
     private void UpdateSliderBar(float current, float max)
     {
+        print("Updating slider bar: " + current + "/" + max);
+
         if (animationCoroutine != null)
         {
             StopCoroutine(animationCoroutine);
