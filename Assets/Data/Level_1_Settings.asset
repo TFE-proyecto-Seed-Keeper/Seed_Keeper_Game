@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d577ca2071311a488fb3f91b9e4b43d, type: 3}
+  m_Name: Level_1_Settings
+  m_EditorClassIdentifier: Assembly-CSharp::LevelSettingsSO
+  sectionPrefabs:
+  - {fileID: 7858024576308709073, guid: 1d5c67a11387f7948afd24b0e5d1c27c, type: 3}
+  - {fileID: 414253279910115007, guid: a46b76ecf571c894297b6afef2693135, type: 3}
+  - {fileID: 414253279910115007, guid: 97b73aca0f2ee88499248d748867b5ce, type: 3}
+  - {fileID: 414253279910115007, guid: ff108dcf0077aff4f8b42778dce5319d, type: 3}
+  - {fileID: 8435528448340832258, guid: a138c66a0fb2eac4f84ecfe6410943de, type: 3}
+  - {fileID: 414253279910115007, guid: 77adae1b221f71c448dd2a9ede86bc8c, type: 3}
+  - {fileID: 414253279910115007, guid: c15779e7e324441418d5111cc159d8d6, type: 3}
+  - {fileID: 8471367261439945058, guid: 27d4a82d20a35904fbac0218e569657d, type: 3}
+  - {fileID: 8377412363327518661, guid: 65bca4075d0236b4c8485c264a6c76e2, type: 3}
+  - {fileID: 8877188420152761509, guid: 571ef96f112fd644b9b07007afafc166, type: 3}
+  - {fileID: 8377412363327518661, guid: 095472128a33baa4a82c7f56405929dd, type: 3}
+  - {fileID: 4206225823654125505, guid: acbffc85116fe7a4ab8468f92d550eec, type: 3}
+  - {fileID: 8077081450448152678, guid: c55c65e8c0e3bcd4ebbdfd778c8c2217, type: 3}
+  - {fileID: 7935232342108182678, guid: 0f113fe9d9c816b47b5c114515e4db33, type: 3}
+  - {fileID: 8077081450448152678, guid: e4d0e1673217a124e898d90f4ea46f85, type: 3}
+  - {fileID: 6126698377200122550, guid: acfa30e2c42a40a46b70228be56804f4, type: 3}
+  - {fileID: 3577511018062954456, guid: 3b5ff138e0c4f0c48a1a19a7adbbec93, type: 3}
+  - {fileID: 5169677901846800748, guid: 76818b0885bc619499197cc2a7d7e9b1, type: 3}
+  - {fileID: 4206225823654125505, guid: 413512b2aa555924db132b0bf8cb13d6, type: 3}
+  levelMapSections: 00000000010000000100000001000000020000000300000004000000
+  startPathDirection: 0
+  typesForAlternativeSections: 0100000002000000

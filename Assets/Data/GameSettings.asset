@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: GameSettings
   m_EditorClassIdentifier: Assembly-CSharp::GameSettingsSO
   mainSceneName: Test_Level_2
-  useSeed: 0
-  seed: 965738
+  useSeed: 1
+  seed: 241512
+  firstLoad: 0
