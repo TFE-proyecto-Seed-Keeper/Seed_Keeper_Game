@@ -6,10 +6,10 @@ public class GameSettingsSO : ScriptableObject
     [Header("Scene settings")]
     public string mainSceneName;
 
-    [Header("Seed settings")]
+    [Header("Procedural Generation Settings")]
     public bool useSeed;
     public int seed;
 
-    [Header("Level settings")]
+    [Header("Level Settings")]
     public bool firstLoad;
 }

@@ -137,7 +137,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 797895137366505652, guid: 9a0b5563aa3c2c54283e7b7cb9b00df5, type: 3}
       propertyPath: m_Name
-      value: LD_EnemySection Variant
+      value: LU_EnemySection Variant
       objectReference: {fileID: 0}
     - target: {fileID: 858999212330382598, guid: 9a0b5563aa3c2c54283e7b7cb9b00df5, type: 3}
       propertyPath: m_LocalPosition.x
