@@ -3193,6 +3193,7 @@ GameObject:
   - component: {fileID: 5817672005019018302}
   - component: {fileID: 3630814990278375425}
   - component: {fileID: 6986100295539966281}
+  - component: {fileID: 5608856347517201687}
   m_Layer: 3
   m_Name: TitiController
   m_TagString: Player
@@ -3471,11 +3472,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackPlayer
   enemyIndex: 0
-  enemySelected: {fileID: 0}
   enemySearchRadius: 15
   nextEnemy: {fileID: 7476244043514120974, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   prevEnemy: {fileID: -1994693953834959884, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  enemyList: []
   meleeAttackSound: {fileID: 8300000, guid: 583691d04cee30d418efb16950d00024, type: 3}
   rangeAttackSound: {fileID: 8300000, guid: d32f80920d9ab6a43896c3b8e0689322, type: 3}
   areaAttackSound: {fileID: 8300000, guid: 4bdd082b52fe05f44aa1c8aaa09fc84b, type: 3}
@@ -3707,6 +3706,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8340bf1a69ee94f469b0f77cc2d7b8b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RagDollController
+--- !u!114 &5608856347517201687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5184271104960397991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e47c63dee3907fb4cac4969b0ba61736, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamageListener
+  OnDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5817672005019018302}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: a38a8007eba77e4428e462f6838603fd, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5243342821346927682
 GameObject:
   m_ObjectHideFlags: 0

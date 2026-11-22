@@ -9,14 +9,14 @@ public class AtackSystem : MonoBehaviour, IAttacks
     [SerializeField]
     int enemyIndex = 0;
 
-    public EnemySystem enemySelected;
+    public EnemyIO enemySelected;
 
     public float enemySearchRadius;
 
     public InputActionReference nextEnemy;
     public InputActionReference prevEnemy;
 
-    public List<EnemySystem> enemyList = new List<EnemySystem>();
+    public List<EnemyIO> enemyList = new List<EnemyIO>();
 
     AudioSource audioSource;
 
@@ -83,7 +83,7 @@ public class AtackSystem : MonoBehaviour, IAttacks
         {
             foreach (var enemy in enemyList)
             {     
-                enemy.RelaseEnemy();        
+                enemy.RelaseEnemy(null);        
             }
         }
         else
@@ -96,10 +96,10 @@ public class AtackSystem : MonoBehaviour, IAttacks
         {
             if (hitColliders[i].CompareTag("enemy"))
             {
-                var enemySystem = hitColliders[i].GetComponent<EnemySystem>();
-                if (enemySystem)
+                var enemySystem = hitColliders[i].GetComponent<EnemyIO>();
+                if (enemySystem!=null)
                 {
-                    if (enemySystem.isalive)
+                    if (enemySystem.IsAlive())
                     {
                         enemyList.Add(enemySystem);
                     }
@@ -130,13 +130,14 @@ public class AtackSystem : MonoBehaviour, IAttacks
 
         foreach (var enemy in enemyList)
         {     
-            enemy.RelaseEnemy();        
+            enemy.RelaseEnemy(null);        
         }
 
-        enemyList[enemyIndex].SetActiveEnemy();
-        Debug.Log("Enemy Select index "+enemyIndex+" " +enemyList[enemyIndex].name);
+        enemyList[enemyIndex].SelectEnemy(null);
+        Debug.Log("Enemy Select index "+enemyIndex);
         enemySelected = enemyList[enemyIndex];
-        transform.LookAt(enemySelected.transform);
+        GameObject enemyObject = (enemySelected as MonoBehaviour)?.gameObject;
+        transform.LookAt(enemyObject.transform);
        
     }
 
@@ -187,8 +188,9 @@ public class AtackSystem : MonoBehaviour, IAttacks
 
         print("Send Range Atack");
         audioSource.PlayOneShot(rangeAttackSound);
-        projectilePulling.launchProjectile(enemySelected.transform.position, projectileCaster, ProjectilePulling.ProjectileType.Player, rangeAtackDamage);
-        transform.LookAt(enemySelected.transform);
+        GameObject enemyObject = (enemySelected as MonoBehaviour)?.gameObject;
+        projectilePulling.launchProjectile(enemyObject.transform.position, projectileCaster, ProjectilePulling.ProjectileType.Player, rangeAtackDamage);
+        transform.LookAt(enemyObject.transform);
         
     }
 
@@ -200,6 +202,8 @@ public class AtackSystem : MonoBehaviour, IAttacks
             return;
         }
 
+        
+
         print("Send area Atack");
         
             audioSource.PlayOneShot(startAreaAttackSound);
@@ -210,8 +214,9 @@ public class AtackSystem : MonoBehaviour, IAttacks
         }
         else
         {
-            transform.LookAt(enemySelected.transform);
-            StartCoroutine(StartVFXareaAttack(enemySelected.transform));
+            GameObject enemyObject = (enemySelected as MonoBehaviour)?.gameObject;
+            transform.LookAt(enemyObject.transform);
+            StartCoroutine(StartVFXareaAttack(enemyObject.transform));
         }
     }
 

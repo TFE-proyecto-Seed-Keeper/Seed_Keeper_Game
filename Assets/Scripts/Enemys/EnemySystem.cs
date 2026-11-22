@@ -1,9 +1,11 @@
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class DummySystem : MonoBehaviour, IDamage
+
+public class EnemySystem : MonoBehaviour, IDamage, EnemyIO
 {
     [SerializeField]
     GameObject indicator;
@@ -15,7 +17,7 @@ public class DummySystem : MonoBehaviour, IDamage
     Slider sliderHealt;
 
     [SerializeField]
-    ParticleSystem deadParticles;
+    ParticleSystem deadParticles, atatck_1_particles;
 
     [SerializeField]
     GameObject Model3D;
@@ -29,6 +31,9 @@ public class DummySystem : MonoBehaviour, IDamage
     [SerializeField]
     GameObject instanceObject;
 
+    [SerializeField]
+    float damageAmount, damageRange;
+
     public UnityEvent EnemydDead;
 
     private void OnEnable()
@@ -39,15 +44,32 @@ public class DummySystem : MonoBehaviour, IDamage
     }
 
 
-    public void SetActiveEnemy()
+   
+    
+    public void SetAttack_1()
     {
-        indicator.SetActive(true);
+       animator.SetTrigger("attack_1");
     }
 
-     public void RelaseEnemy()
+    public void InvokeAttack1()
     {
-        indicator.SetActive(false);
+        atatck_1_particles.Play();
+
+        Physics.OverlapSphere(atatck_1_particles.transform.position, damageRange).ToList().ForEach(x =>
+        {
+            if (x.CompareTag("Player") && x.TryGetComponent<IDamage>(out IDamage damage))
+            {
+                damage.ReceiveDamage(damageAmount);
+            }
+        });
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(atatck_1_particles.transform.position, damageRange);
+        Gizmos.DrawSphere(atatck_1_particles.transform.position, damageRange);
+    }
+   
 
     public void ReceiveDamage(float damage)
     {
@@ -92,5 +114,20 @@ public class DummySystem : MonoBehaviour, IDamage
         yield return new WaitForSeconds(0.15f);
         Destroy(gameObject);
        
+    }
+
+    public void SelectEnemy(GameObject interactor)
+    {
+        indicator.SetActive(true);
+    }
+
+    public void RelaseEnemy(GameObject interactor)
+    {
+        indicator.SetActive(false);
+    }
+
+    public bool IsAlive()
+    {
+        return isalive;
     }
 }
