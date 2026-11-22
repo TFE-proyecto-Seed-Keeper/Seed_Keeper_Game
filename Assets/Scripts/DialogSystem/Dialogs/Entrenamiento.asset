@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e243e41a1b931a04ca6532938d5c8350, type: 3}
-  m_Name: descripcionCeiba
+  m_Name: Entrenamiento
   m_EditorClassIdentifier: Assembly-CSharp::DialogData
-  dialogName: Ceiba.
+  dialogName: A la zona de entrenamiento.
   dialogLines:
-  - "Sus ra\xEDces son fuertes y crecen altos."
-  - "Nuestro \xE1rbol m\xE1s sagrado.\_"
+  - "Inventario de semillas: Z-X\_ / D-Pad\_"
