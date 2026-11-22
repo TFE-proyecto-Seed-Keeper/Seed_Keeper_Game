@@ -15,4 +15,4 @@ MonoBehaviour:
   mainSceneName: Test_Level_2
   useSeed: 1
   seed: 241512
-  firstLoad: 1
+  firstLoad: 0

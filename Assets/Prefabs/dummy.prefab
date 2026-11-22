@@ -20173,8 +20173,9 @@ GameObject:
   - component: {fileID: 4353686952843144564}
   - component: {fileID: 2360758307816491413}
   - component: {fileID: 3909632740682467762}
+  - component: {fileID: 5705941936845536129}
   m_Layer: 7
-  m_Name: training_dummy
+  m_Name: dummy
   m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20262,10 +20263,40 @@ MonoBehaviour:
   Model3D: {fileID: 1622633578223683357}
   healt: 100
   isalive: 1
+  dropItem: 1
   instanceObject: {fileID: 1622633578223683357}
   EnemydDead:
     m_PersistentCalls:
       m_Calls: []
+  EnemydFirtsDead:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5705941936845536129}
+        m_TargetAssemblyTypeName: Instancer, Assembly-CSharp
+        m_MethodName: InstanceOnPLayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5705941936845536129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7602922587098391180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a8c8230e5cb13c4984f2a4b53ca307a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Instancer
+  prefabToPlayerPosition: {fileID: 3445991800259274116, guid: 780a8cfebcd2dc844a83b7c9a1e4a29d, type: 3}
+  prefabTosamePosition: {fileID: 7602922587098391180}
 --- !u!1 &7830236519378600109
 GameObject:
   m_ObjectHideFlags: 0

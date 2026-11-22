@@ -26,10 +26,12 @@ public class DummySystem : MonoBehaviour, IDamage, EnemyIO
     float initialHealt;
     public bool isalive = true;
 
+    public bool dropItem = true;
+
     [SerializeField]
     GameObject instanceObject;
 
-    public UnityEvent EnemydDead;
+    public UnityEvent EnemydDead, EnemydFirtsDead;
 
     private void OnEnable()
     {
@@ -79,9 +81,16 @@ public class DummySystem : MonoBehaviour, IDamage, EnemyIO
         Model3D.SetActive(false);
         yield return new WaitForSeconds(0.75f);
         EnemydDead.Invoke();
+        if (dropItem)
+        {
+            EnemydFirtsDead.Invoke();
+            dropItem = false;
+        }
+        
         yield return new WaitForSeconds(0.15f);
-        Destroy(gameObject);
-       
+        ResetDummy();
+
+
     }
 
     public void SelectEnemy(GameObject interactor)
@@ -97,5 +106,16 @@ public class DummySystem : MonoBehaviour, IDamage, EnemyIO
     public bool IsAlive()
     {
         return isalive;
+    }
+
+    void ResetDummy()
+    {
+        healt = initialHealt;
+        sliderHealt.maxValue = healt;
+        sliderHealt.value = healt;
+        Model3D.SetActive(true);
+        animator.SetTrigger("up");
+        isalive = true;
+        
     }
 }
