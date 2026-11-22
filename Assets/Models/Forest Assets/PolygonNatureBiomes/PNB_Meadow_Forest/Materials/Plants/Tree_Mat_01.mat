@@ -127,9 +127,9 @@ Material:
     - _Enable_Leaf_Normal: 0
     - _Enable_Light_Wind: 1
     - _Enable_Pulse: 0
-    - _Enable_Strong_Wind: 1
+    - _Enable_Strong_Wind: 0
     - _Enable_Trunk_Normal: 0
-    - _Enable_Wind_Twist: 1
+    - _Enable_Wind_Twist: 0
     - _EnvironmentReflections: 1
     - _FlatColourSwitch: 1
     - _Float0: 0.5

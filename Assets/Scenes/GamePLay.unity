@@ -55485,25 +55485,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 496454490913722375, guid: c4a3a6e5551e6ab429c1dc5e8fdafbc6, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 739240639354438539, guid: c4a3a6e5551e6ab429c1dc5e8fdafbc6, type: 3}
       propertyPath: m_Name
       value: ArbolTotumo
-      objectReference: {fileID: 0}
-    - target: {fileID: 739240639354438539, guid: c4a3a6e5551e6ab429c1dc5e8fdafbc6, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4209428262444853976, guid: c4a3a6e5551e6ab429c1dc5e8fdafbc6, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5861073318636076873, guid: c4a3a6e5551e6ab429c1dc5e8fdafbc6, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
