@@ -3,11 +3,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
+using DG.Tweening;
 
 public class Restorer : MonoBehaviour
 {
     [SerializeField]
-    private GameObject interactor;
+    private GameObject interactor, spawnTree;
+
+    [SerializeField]
+    float animationTime = 1f;
 
     [SerializeField]
     TMPro.TextMeshProUGUI titleText, costText;
@@ -31,7 +35,7 @@ public class Restorer : MonoBehaviour
     [SerializeField]
     int seedCost;
 
-    public UnityEvent onUnlock, delayUnlock;
+    public UnityEvent onUnlock;
 
     private void Awake()
     {
@@ -127,6 +131,8 @@ public class Restorer : MonoBehaviour
 
         onUnlock.Invoke();
 
+        Invoke("SpawnTree", 0.5f);
+
         interactor.SetActive(false);
     }
 
@@ -164,6 +170,14 @@ public class Restorer : MonoBehaviour
             Debug.LogWarning("SeedSystem not found in the scene.");
             return false;
         }
+
+    }
+
+    void SpawnTree()
+    {
+        spawnTree.transform.localScale = Vector3.zero;
+        spawnTree.SetActive(true);
+        spawnTree.transform.DOScale(Vector3.one, animationTime).SetEase(Ease.InBounce);
 
     }
 }
