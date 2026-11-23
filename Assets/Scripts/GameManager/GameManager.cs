@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using System.Collections;
 using Unity.Cinemachine;
 
@@ -18,8 +19,13 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     CinemachineCamera[] cameras;
 
+   
+    public UnityEvent OnSecondLoad;
+
     [SerializeField]
     bool testMode = false;
+
+
 
     private void Start()
     {
@@ -47,6 +53,7 @@ public class GameManager : MonoBehaviour
         else
         {
             player.transform.position = playerSpawnPoints[1].position;
+            OnSecondLoad.Invoke();
         }
     }
 

@@ -116,9 +116,9 @@ public class Unlocker : MonoBehaviour
 
     public void Unlock()
     {
-        audioSource.PlayOneShot(SuccessSound);
+        print("Unlocking");
 
-        
+        audioSource.PlayOneShot(SuccessSound);
 
         DisableAction();
 
