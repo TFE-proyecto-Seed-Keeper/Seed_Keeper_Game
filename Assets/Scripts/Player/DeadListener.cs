@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,7 +7,7 @@ public class DeadListener : MonoBehaviour
 
     private void OnEnable()
     { 
-           HealthSystem.OnDead += OnPlayerDead;
+        HealthSystem.OnDead += OnPlayerDead;
     }
 
     private void OnPlayerDead(float obj)
@@ -20,6 +19,4 @@ public class DeadListener : MonoBehaviour
     {
         HealthSystem.OnDead -= OnPlayerDead;
     }
-}       
-    
-
+}

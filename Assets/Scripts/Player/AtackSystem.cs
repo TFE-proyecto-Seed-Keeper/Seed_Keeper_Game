@@ -104,8 +104,6 @@ public class AtackSystem : MonoBehaviour, IAttacks
                         enemyList.Add(enemySystem);
                     }
                 }
-
-               
             }
         }
 

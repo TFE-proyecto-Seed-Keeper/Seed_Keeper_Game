@@ -2,14 +2,16 @@ using UnityEngine;
 
 public class Ragdollcontroller : MonoBehaviour
 {
+    private Rigidbody ragdoll;
 
     private void Start()
     {
+        ragdoll = GetComponentInChildren<Rigidbody>();
+
         DisableRagDoll();
     }
     public void ActivateRagdoll()
     {
-        var ragdoll = GetComponentInChildren<Rigidbody>();
         if (ragdoll != null)
         {
             ragdoll.isKinematic = false;
@@ -19,14 +21,10 @@ public class Ragdollcontroller : MonoBehaviour
 
     public void DisableRagDoll()
     {
-        var ragdoll = GetComponentInChildren<Rigidbody>();
         if (ragdoll != null)
         {
             ragdoll.isKinematic = true;
             ragdoll.detectCollisions = false;
         }
     }
-
-    
-    
 }

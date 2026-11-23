@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class DummySystem : MonoBehaviour, IDamage, EnemyIO
 {
+    private static readonly int DieHash = Animator.StringToHash("die");
+    private static readonly int DamageHash = Animator.StringToHash("damage");
     [SerializeField]
     GameObject indicator;
 
@@ -46,10 +48,8 @@ public class DummySystem : MonoBehaviour, IDamage, EnemyIO
         if (!isalive)
             return;
 
-        print("recieve Melee Atack o n Enemy amount "+damage);
-        animator.SetTrigger("damage");
-
-
+        print("recieve Melee Attack o n Enemy amount "+damage);
+        animator.SetTrigger(DamageHash);
 
         if(GetComponentInChildren<TextParticleEmitter>() is TextParticleEmitter textEmitter)
         {
@@ -61,7 +61,7 @@ public class DummySystem : MonoBehaviour, IDamage, EnemyIO
 
         if (healt <= 0)
         {
-            animator.SetTrigger("die");
+            animator.SetTrigger(DieHash);
             StartCoroutine(SetDead());
         }
     }
@@ -70,9 +70,9 @@ public class DummySystem : MonoBehaviour, IDamage, EnemyIO
     {
         isalive = false;
         
-        if (FindAnyObjectByType<AtackSystem>() is AtackSystem atackSystem)
+        if (FindAnyObjectByType<AtackSystem>() is AtackSystem attackSystem)
         {
-            atackSystem.SelectNextEnemy(1);
+            attackSystem.SelectNextEnemy(1);
         }
 
         yield return new WaitForSeconds(2f);
@@ -89,8 +89,6 @@ public class DummySystem : MonoBehaviour, IDamage, EnemyIO
         
         yield return new WaitForSeconds(0.15f);
         ResetDummy();
-
-
     }
 
     public void SelectEnemy(GameObject interactor)
@@ -116,6 +114,5 @@ public class DummySystem : MonoBehaviour, IDamage, EnemyIO
         Model3D.SetActive(true);
         animator.SetTrigger("up");
         isalive = true;
-        
     }
 }

@@ -7,6 +7,10 @@ using UnityEngine.UI;
 
 public class EnemySystem : MonoBehaviour, IDamage, EnemyIO
 {
+    private static readonly int CanMoveHash = Animator.StringToHash("canMove");
+    private static readonly int DieHash = Animator.StringToHash("die");
+    private static readonly int HitHash = Animator.StringToHash("hit");
+
     [SerializeField]
     GameObject indicator;
 
@@ -17,7 +21,7 @@ public class EnemySystem : MonoBehaviour, IDamage, EnemyIO
     Slider sliderHealt;
 
     [SerializeField]
-    ParticleSystem deadParticles, atatck_1_particles;
+    ParticleSystem deadParticles, attack_1_particles;
 
     [SerializeField]
     GameObject Model3D;
@@ -36,6 +40,9 @@ public class EnemySystem : MonoBehaviour, IDamage, EnemyIO
 
     public UnityEvent EnemydDead;
 
+    private bool canMove = true;
+    private bool canAttack = true;
+
     private void OnEnable()
     {
         initialHealt = healt;
@@ -43,21 +50,18 @@ public class EnemySystem : MonoBehaviour, IDamage, EnemyIO
         sliderHealt.value = healt;
     }
 
-
-   
-    
-    public void SetAttack_1()
+    private void Update()
     {
-       animator.SetTrigger("attack_1");
+        animator.SetBool(CanMoveHash, canMove);
     }
 
-    public void InvokeAttack1()
+    public void PerformAttack1()
     {
-        atatck_1_particles.Play();
+        attack_1_particles.Play();
 
-        Physics.OverlapSphere(atatck_1_particles.transform.position, damageRange).ToList().ForEach(x =>
+        Physics.OverlapSphere(attack_1_particles.transform.position, damageRange).ToList().ForEach(x =>
         {
-            if (x.CompareTag("Player") && x.TryGetComponent<IDamage>(out IDamage damage))
+            if (x.CompareTag("Player") && x.TryGetComponent(out IDamage damage))
             {
                 damage.ReceiveDamage(damageAmount);
             }
@@ -66,22 +70,20 @@ public class EnemySystem : MonoBehaviour, IDamage, EnemyIO
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.DrawWireSphere(atatck_1_particles.transform.position, damageRange);
-        Gizmos.DrawSphere(atatck_1_particles.transform.position, damageRange);
+        Gizmos.DrawWireSphere(attack_1_particles.transform.position, damageRange);
+        Gizmos.DrawSphere(attack_1_particles.transform.position, damageRange);
     }
-   
 
     public void ReceiveDamage(float damage)
     {
         if (!isalive)
             return;
 
-        print("recieve Melee Atack o n Enemy amount "+damage);
-        animator.SetTrigger("damage");
+        print("recieve Melee Attack o n Enemy amount "+damage);
+        animator.SetTrigger(HitHash);
+        DeactivateMovement();
 
-
-
-        if(GetComponentInChildren<TextParticleEmitter>() is TextParticleEmitter textEmitter)
+        if (GetComponentInChildren<TextParticleEmitter>() is TextParticleEmitter textEmitter)
         {
             textEmitter.EmitDamageText(damage);
         }
@@ -91,7 +93,7 @@ public class EnemySystem : MonoBehaviour, IDamage, EnemyIO
 
         if (healt <= 0)
         {
-            animator.SetTrigger("die");
+            animator.SetTrigger(DieHash);
             StartCoroutine(SetDead());
         }
     }
@@ -100,12 +102,12 @@ public class EnemySystem : MonoBehaviour, IDamage, EnemyIO
     {
         isalive = false;
         
-        if (FindAnyObjectByType<AtackSystem>() is AtackSystem atackSystem)
+        if (FindAnyObjectByType<AtackSystem>() is AtackSystem attackSystem)
         {
-            atackSystem.SelectNextEnemy(1);
+            attackSystem.SelectNextEnemy(1);
         }
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         deadParticles.Play();
         yield return new WaitForSeconds(0.15f);
         Model3D.SetActive(false);
@@ -113,7 +115,6 @@ public class EnemySystem : MonoBehaviour, IDamage, EnemyIO
         EnemydDead.Invoke();
         yield return new WaitForSeconds(0.15f);
         Destroy(gameObject);
-       
     }
 
     public void SelectEnemy(GameObject interactor)
@@ -126,8 +127,21 @@ public class EnemySystem : MonoBehaviour, IDamage, EnemyIO
         indicator.SetActive(false);
     }
 
-    public bool IsAlive()
+    public bool IsAlive() => isalive;
+
+    public bool CanMove => canMove;
+
+    public bool CanAttack => canAttack;
+
+    public void ActivateMovement()
     {
-        return isalive;
+        canMove = true;
+        canAttack = true;
+    }
+
+    public void DeactivateMovement()
+    {
+        canMove = false;
+        canAttack = false;
     }
 }
