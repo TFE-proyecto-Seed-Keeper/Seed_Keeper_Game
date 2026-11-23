@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5d87a31c73efe843a519762d61ac3bb, type: 3}
   m_Name: GameSettings
   m_EditorClassIdentifier: Assembly-CSharp::GameSettingsSO
-  mainSceneName: Test_Level_2
+  mainSceneName: GamePLay
   useSeed: 1
   seed: 241512
-  firstLoad: 1
+  firstLoad: 0
