@@ -20253,7 +20253,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7602922587098391180}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cd6808c6ada74e1ab9d37a03ce91c7b, type: 3}
+  m_Script: {fileID: 11500000, guid: a12a5908008ecc241a12d196bb103bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySystem
   indicator: {fileID: 1105095537556670614}
@@ -20264,7 +20264,7 @@ MonoBehaviour:
   healt: 100
   isalive: 1
   dropItem: 1
-  instanceObject: {fileID: 1622633578223683357}
+  instanceObject: {fileID: 0}
   EnemydDead:
     m_PersistentCalls:
       m_Calls: []
