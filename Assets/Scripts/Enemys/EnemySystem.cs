@@ -38,7 +38,7 @@ public class EnemySystem : MonoBehaviour, IDamage, EnemyIO
     [SerializeField]
     float damageAmount, damageRange;
 
-    public UnityEvent EnemydDead;
+    public UnityEvent EnemyDead;
 
     private bool canMove = true;
     private bool canAttack = true;
@@ -57,6 +57,11 @@ public class EnemySystem : MonoBehaviour, IDamage, EnemyIO
 
     public void PerformAttack1()
     {
+        if(!isalive)
+        {
+            return;
+        }
+
         attack_1_particles.Play();
 
         Physics.OverlapSphere(attack_1_particles.transform.position, damageRange).ToList().ForEach(x =>
@@ -80,8 +85,8 @@ public class EnemySystem : MonoBehaviour, IDamage, EnemyIO
             return;
 
         print("recieve Melee Attack o n Enemy amount "+damage);
-        animator.SetTrigger(HitHash);
         DeactivateMovement();
+        animator.SetTrigger(HitHash);
 
         if (GetComponentInChildren<TextParticleEmitter>() is TextParticleEmitter textEmitter)
         {
@@ -106,14 +111,14 @@ public class EnemySystem : MonoBehaviour, IDamage, EnemyIO
         {
             attackSystem.SelectNextEnemy(1);
         }
+        
+        EnemyDead.Invoke();
 
         yield return new WaitForSeconds(3f);
         deadParticles.Play();
         yield return new WaitForSeconds(0.15f);
         Model3D.SetActive(false);
         yield return new WaitForSeconds(0.75f);
-        EnemydDead.Invoke();
-        yield return new WaitForSeconds(0.15f);
         Destroy(gameObject);
     }
 

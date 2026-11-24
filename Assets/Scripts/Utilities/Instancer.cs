@@ -8,7 +8,7 @@ public class Instancer : MonoBehaviour
     {        
         if(prefabToPlayerPosition != null)
         {
-            InstancerManager._instanceManager.InstancePrefabToPlayerPosition(prefabToPlayerPosition, this.gameObject);
+            InstancerManager._instanceManager.InstancePrefabToPlayerPosition(prefabToPlayerPosition);
         }   
     }
 
@@ -16,9 +16,7 @@ public class Instancer : MonoBehaviour
     {
         if(prefabTosamePosition != null)
         {
-            InstancerManager._instanceManager.InstancePrefabTosamePosition(prefabTosamePosition, this.gameObject);
+            InstancerManager._instanceManager.InstancePrefabTosamePosition(prefabTosamePosition, gameObject);
         }
     }
-
-   
 }

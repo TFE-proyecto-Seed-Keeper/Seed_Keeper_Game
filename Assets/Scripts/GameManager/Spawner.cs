@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using Unity.Behavior;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
@@ -46,7 +48,29 @@ public class Spawner : MonoBehaviour
 
         for (int i = 0; i < objectsToSpawn; i++)
         {
-            Instantiate(objects[i], points[i].position, Quaternion.identity);
+            var obj = Instantiate(objects[i], points[i].position, Quaternion.identity);
+
+            TrySetPatrolPoints(obj);
         }
+    }
+
+    private void TrySetPatrolPoints(GameObject enemy)
+    {
+        if (!enemy.TryGetComponent(out BehaviorGraphAgent agent))
+        {
+            return;
+        }
+
+        List<GameObject> patrolPoints = new();
+
+        foreach (var point in spawnPoints)
+        {
+            if(Random.Range(0f, 1f) > 0.5f)
+            {
+                patrolPoints.Add(point.gameObject);
+            }
+        }
+
+        agent.SetVariableValue("PatrolPoints", patrolPoints);
     }
 }

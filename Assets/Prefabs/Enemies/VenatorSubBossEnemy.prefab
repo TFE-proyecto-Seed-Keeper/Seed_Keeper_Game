@@ -4976,6 +4976,7 @@ GameObject:
   - component: {fileID: 491277798707706391}
   - component: {fileID: 8059699549252258588}
   - component: {fileID: 4118425367888445884}
+  - component: {fileID: 3589403836167151485}
   m_Layer: 7
   m_Name: VenatorSubBossEnemy
   m_TagString: enemy
@@ -5065,14 +5066,50 @@ MonoBehaviour:
   deadParticles: {fileID: 3257989404928867074}
   attack_1_particles: {fileID: 4311592670128993472}
   Model3D: {fileID: 1480499821398610318}
-  healt: 100
+  healt: 300
   isalive: 1
   instanceObject: {fileID: 3445991800259274116, guid: 780a8cfebcd2dc844a83b7c9a1e4a29d, type: 3}
-  damageAmount: 50
-  damageRange: 1.3
-  EnemydDead:
+  damageAmount: 40
+  damageRange: 1.5
+  EnemyDead:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7692801243206158308}
+        m_TargetAssemblyTypeName: UnityEngine.BoxCollider, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3589403836167151485}
+        m_TargetAssemblyTypeName: Instancer, Assembly-CSharp
+        m_MethodName: InstanceOnPLayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3589403836167151485}
+        m_TargetAssemblyTypeName: Instancer, Assembly-CSharp
+        m_MethodName: InstanceOnSite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &491277798707706391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5088,7 +5125,7 @@ MonoBehaviour:
   detectionMask:
     serializedVersion: 2
     m_Bits: 8
-  detectionRadius: 6
+  detectionRadius: 10
   showGizmos: 1
   DetectedTarget: {fileID: 0}
 --- !u!114 &8059699549252258588
@@ -5103,8 +5140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d951e915fe7ef6c43a2fa3ba47a5dfa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SightDetector
-  detectionRange: 6
-  detectionAngle: 200
+  detectionRange: 10
+  detectionAngle: 360
   showGizmos: 1
 --- !u!114 &4118425367888445884
 MonoBehaviour:
@@ -5123,6 +5160,7 @@ MonoBehaviour:
   - rid: 3384002636541067371
   - rid: 3384002636541067372
   - rid: 3384002640358146202
+  - rid: 3384002662784827525
   m_OriginalGraph: {fileID: 8128047066088602990, guid: a2f7ef94a5c04f24b840621b6622b32a, type: 2}
   m_IsInitialised: 0
   m_IsStarted: 0
@@ -5153,6 +5191,28 @@ MonoBehaviour:
           m_Value1: 11815257327890384816
         Name: SightDetector
         m_Value: {fileID: 8059699549252258588}
+    - rid: 3384002662784827525
+      type: {class: 'BlackboardVariable`1[[System.Single, mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 7228469025323404326
+          m_Value1: 15758290479606110885
+        Name: AttackDelay
+        m_Value: 1.5
+--- !u!114 &3589403836167151485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381503514099840747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a8c8230e5cb13c4984f2a4b53ca307a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Instancer
+  prefabToPlayerPosition: {fileID: 3445991800259274116, guid: 780a8cfebcd2dc844a83b7c9a1e4a29d, type: 3}
+  prefabTosamePosition: {fileID: 229624591171794702, guid: bbf6221f6c1a4834b8d7bdf93bf77857, type: 3}
 --- !u!1 &383240574557498896
 GameObject:
   m_ObjectHideFlags: 0
