@@ -77,6 +77,8 @@ public class LevelSection : MonoBehaviour
 
     private void OnDisable()
     {
+
+        if(startTrigger)
         startTrigger.TeleportEvent -= TeleportToNextSection;
 
         if (hasEndPath)

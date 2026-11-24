@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
             gameSettings.firstLoad = false;
             player.transform.position = playerSpawnPoints[0].position;
             cameras[1].Priority = 1;
+            cameras[0].Priority = 0;
             StartCoroutine(StartAfterDelay());
         }
         else
