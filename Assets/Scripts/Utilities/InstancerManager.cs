@@ -22,7 +22,7 @@ public class InstancerManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    public GameObject InstancePrefabToPlayerPosition(GameObject prefabToInstantiate)
+    public GameObject InstancePrefabToPlayerPosition(GameObject prefabToInstantiate, GameObject whoInstance)
     {
         if (prefabToInstantiate == null)
         {
@@ -30,7 +30,7 @@ public class InstancerManager : MonoBehaviour
         }
 
         var player = GameObject.FindGameObjectWithTag("Player");
-        GameObject obj = InstantiatePrefab(prefabToInstantiate, player, player);
+        GameObject obj = InstantiatePrefab(prefabToInstantiate, whoInstance, player);
 
         return obj;
     }
