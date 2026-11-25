@@ -329,7 +329,7 @@ MonoBehaviour:
   - rid: 3384002646688137800
   - rid: 3384002662784828188
   - rid: 3384002662784828189
-  m_VersionTimestamp: 639310866571225023
+  m_VersionTimestamp: 639311650904450764
   m_SerializedVersion: 3
   m_DebugInfo: {fileID: -3544870854437453027}
   m_RuntimeGraph: {fileID: 8128047066088602990}
@@ -397,20 +397,20 @@ MonoBehaviour:
       Tooltip: 
     NamedChildren: []
     IsPlaceholder: 0
-  - Name: RangeDetector
-    Story: 'Update Range [Detector] and assign [Player]'
-    RuntimeTypeString: RangeDetectorAction, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+  - Name: AnimationTrigger
+    Story: 'Play [animation] in [animator]'
+    RuntimeTypeString: AnimationTriggerAction, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
     RuntimeTypeID:
       m_Value0: 7148165161292616242
       m_Value1: 529461955422877880
     Variables:
-    - Name: Detector
+    - Name: animation
       Type:
-        m_SerializableType: RangeDetector, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-          PublicKeyToken=null
+        m_SerializableType: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
       Tooltip: 
-    - Name: Player
+    - Name: animator
       Type:
         m_SerializableType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
@@ -918,7 +918,7 @@ MonoBehaviour:
     - rid: 3384002626573304370
       type: {class: ActionNodeModel, ns: Unity.Behavior, asm: Unity.Behavior.Authoring}
       data:
-        Position: {x: -2355.8015, y: 121.26105}
+        Position: {x: -2357.1306, y: 122.59004}
         ID:
           m_Value0: 8722891358386701689
           m_Value1: 2963011067570516591
@@ -927,14 +927,14 @@ MonoBehaviour:
         - rid: 3384002626573304371
         - rid: 3384002626573304372
         NodeType:
-          m_SerializableType: RangeDetectorAction, Assembly-CSharp, Version=0.0.0.0,
+          m_SerializableType: AnimationTriggerAction, Assembly-CSharp, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         NodeTypeID:
           m_Value0: 7148165161292616242
           m_Value1: 529461955422877880
         m_FieldValues:
-        - rid: 3384002626573304373
-        - rid: 3384002626573304374
+        - rid: 3384002692820500649
+        - rid: 3384002692820500650
     - rid: 3384002626573304371
       type: {class: PortModel, ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
       data:
@@ -955,64 +955,6 @@ MonoBehaviour:
           rid: 3384002626573304370
         m_Connections:
         - rid: 3384002636541067738
-    - rid: 3384002626573304373
-      type: {class: BehaviorGraphNodeModel/FieldModel, ns: Unity.Behavior, asm: Unity.Behavior.Authoring}
-      data:
-        FieldName: Detector
-        Type:
-          m_SerializableType: RangeDetector, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-            PublicKeyToken=null
-        LocalValue:
-          rid: 3384002626573304375
-        LinkedVariable:
-          rid: 3384002626573304482
-    - rid: 3384002626573304374
-      type: {class: BehaviorGraphNodeModel/FieldModel, ns: Unity.Behavior, asm: Unity.Behavior.Authoring}
-      data:
-        FieldName: Player
-        Type:
-          m_SerializableType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        LocalValue:
-          rid: 3384002626573304376
-        LinkedVariable:
-          rid: 3384002626573304377
-    - rid: 3384002626573304375
-      type: {class: 'BlackboardVariable`1[[RangeDetector, Assembly-CSharp]]', ns: Unity.Behavior, asm: Unity.Behavior}
-      data:
-        GUID:
-          m_Value0: 0
-          m_Value1: 0
-        Name: 
-        m_Value: {fileID: 0}
-    - rid: 3384002626573304376
-      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
-      data:
-        GUID:
-          m_Value0: 0
-          m_Value1: 0
-        Name: 
-        m_Value: {fileID: 0}
-    - rid: 3384002626573304377
-      type: {class: 'TypedVariableModel`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
-      data:
-        ID:
-          m_Value0: 14375357412775453286
-          m_Value1: 7651854071850168899
-        Name: Player
-        IsExposed: 0
-        m_IsShared: 0
-        m_Value: {fileID: 0}
-    - rid: 3384002626573304482
-      type: {class: 'TypedVariableModel`1[[RangeDetector, Assembly-CSharp]]', ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
-      data:
-        ID:
-          m_Value0: 15464665431849640003
-          m_Value1: 159514200994701305
-        Name: RangeDetector
-        IsExposed: 1
-        m_IsShared: 0
-        m_Value: {fileID: 0}
     - rid: 3384002626573304506
       type: {class: ActionNodeModel, ns: Unity.Behavior, asm: Unity.Behavior.Authoring}
       data:
@@ -5051,6 +4993,44 @@ MonoBehaviour:
           m_Value1: 0
         Name: 
         m_Value: 1
+    - rid: 3384002692820500649
+      type: {class: BehaviorGraphNodeModel/FieldModel, ns: Unity.Behavior, asm: Unity.Behavior.Authoring}
+      data:
+        FieldName: animation
+        Type:
+          m_SerializableType: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        LocalValue:
+          rid: 3384002692820500651
+        LinkedVariable:
+          rid: -2
+    - rid: 3384002692820500650
+      type: {class: BehaviorGraphNodeModel/FieldModel, ns: Unity.Behavior, asm: Unity.Behavior.Authoring}
+      data:
+        FieldName: animator
+        Type:
+          m_SerializableType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        LocalValue:
+          rid: 3384002692820500652
+        LinkedVariable:
+          rid: -2
+    - rid: 3384002692820500651
+      type: {class: 'BlackboardVariable`1[[System.String, mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 0
+          m_Value1: 0
+        Name: 
+        m_Value: 
+    - rid: 3384002692820500652
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 0
+          m_Value1: 0
+        Name: 
+        m_Value: {fileID: 0}
 --- !u!114 &8128047066088602990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5084,7 +5064,7 @@ MonoBehaviour:
         BlackboardGroupReferences: []
         Root:
           rid: 3384002672401318552
-        m_VersionTimestamp: 639310866571225023
+        m_VersionTimestamp: 639311650904450764
     - rid: 3384002617426051348
       type: {class: BlackboardReference, ns: Unity.Behavior, asm: Unity.Behavior}
       data:

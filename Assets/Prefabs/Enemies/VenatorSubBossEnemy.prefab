@@ -5069,7 +5069,7 @@ MonoBehaviour:
   healt: 300
   isalive: 1
   instanceObject: {fileID: 3445991800259274116, guid: 780a8cfebcd2dc844a83b7c9a1e4a29d, type: 3}
-  damageAmount: 40
+  damageAmount: 30
   damageRange: 1.5
   EnemyDead:
     m_PersistentCalls:
@@ -5155,13 +5155,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0038c16c34866b4f9e25c9c0dc0f7e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Behavior::Unity.Behavior.BehaviorGraphAgent
-  m_Graph: {fileID: 8128047066088602990, guid: a2f7ef94a5c04f24b840621b6622b32a, type: 2}
+  m_Graph: {fileID: 8128047066088602990, guid: 2e6d24d72860e8247a431c3df6af5cd4, type: 2}
   m_BlackboardVariableOverridesList:
   - rid: 3384002636541067371
   - rid: 3384002636541067372
   - rid: 3384002640358146202
   - rid: 3384002662784827525
-  m_OriginalGraph: {fileID: 8128047066088602990, guid: a2f7ef94a5c04f24b840621b6622b32a, type: 2}
+  m_OriginalGraph: {fileID: 8128047066088602990, guid: 2e6d24d72860e8247a431c3df6af5cd4, type: 2}
   m_IsInitialised: 0
   m_IsStarted: 0
   references:
