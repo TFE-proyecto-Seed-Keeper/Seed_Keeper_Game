@@ -36,7 +36,8 @@ public class SkillUI : MonoBehaviour
     [SerializeField]
     bool skillEnabled;
 
-    public List<IAttacks> AllIAttacks = new List<IAttacks>();
+    
+    public List<GameObject> AllIAttacks = new List<GameObject>();
 
     public void TakeDamage(float amount)
     {
@@ -71,9 +72,16 @@ public class SkillUI : MonoBehaviour
     // Este m�todo se dispara autom�ticamente al presionar
     private void OnSkillPressed(InputAction.CallbackContext context)
     {
+        print("SE ENVIO ATACK");
+
         if (!skillEnabled)
+        {
+            print("SE BLOQUEO  ATACK");
             return;
-       
+        }
+
+        print("ATACK EXITOSO");
+
         skillAnimator.SetTrigger("Pressed");
         
         StartAttack();
@@ -92,6 +100,7 @@ public class SkillUI : MonoBehaviour
 
     IEnumerator BlockSkill()
     {
+
         skillEnabled = false;
 
         coldawnImage.fillAmount = 1;
@@ -127,21 +136,34 @@ public class SkillUI : MonoBehaviour
         
         foreach (var attack in AllIAttacks)
         {
+            var iAttacks = attack.GetComponents<IAttacks>();
+
             switch (attackType)
             {
                 case AttackType.None:
                     break;
 
                 case AttackType.melee:
-                    attack.SetMeleeAttack();
+                    
+                    foreach (var item in iAttacks)
+                    {
+                        item.SetMeleeAttack();
+                    }
                     break;
 
                 case AttackType.range:
-                    attack.SetRangettack();
+                    
+                    foreach (var item in iAttacks)
+                    {
+                        item.SetRangettack();
+                    }
                     break;
 
                 case AttackType.area:
-                    attack.SetAreaAttack();
+                    foreach (var item in iAttacks)
+                    {
+                        item.SetAreaAttack();
+                    }
                     break;
             }
             
@@ -156,7 +178,7 @@ public class SkillUI : MonoBehaviour
         {
             if (mb is IAttacks attack)
             {
-               AllIAttacks.Add(attack);
+               AllIAttacks.Add(mb.gameObject);
             }
         }
     }

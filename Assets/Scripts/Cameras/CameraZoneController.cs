@@ -13,8 +13,10 @@ public class CameraZoneController : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             ResetCameras();
-            inCamera.Priority = 1;
-            
+            if (inCamera != null)
+            {
+                inCamera.Priority = 1;
+            }
         }
     }
 

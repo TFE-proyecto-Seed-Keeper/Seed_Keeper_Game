@@ -25,11 +25,25 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     bool testMode = false;
 
-
+    private void Awake()
+    {
+        if (gameSettings.firstLoad)
+        {
+            print("First load");
+            gameSettings.firstLoad = false;
+            player.transform.position = playerSpawnPoints[0].position;            
+        }
+        else
+        {
+            print("Second load");
+            player.transform.position = playerSpawnPoints[1].position;
+            OnSecondLoad.Invoke();
+        }
+    }
 
     private void Start()
     {
-        SetGameSettings();
+        //Invoke(nameof(SetGameSettings), 1f);
     }
 
     private void SetGameSettings()
@@ -45,6 +59,7 @@ public class GameManager : MonoBehaviour
 
         if (gameSettings.firstLoad)
         {
+            print("First load");
             gameSettings.firstLoad = false;
             player.transform.position = playerSpawnPoints[0].position;
             cameras[1].Priority = 1;
@@ -53,6 +68,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            print("Second load");
             player.transform.position = playerSpawnPoints[1].position;
             OnSecondLoad.Invoke();
         }
@@ -60,7 +76,9 @@ public class GameManager : MonoBehaviour
 
     IEnumerator StartAfterDelay()
     {
+        print("Start with Delay before");
         yield return new WaitForSeconds(1.5f);
+        print("Start with Delay after");
         cameras[1].Priority = 0;
         cameras[0].Priority = 1;
     }

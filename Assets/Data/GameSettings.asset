@@ -15,4 +15,4 @@ MonoBehaviour:
   mainSceneName: GamePLay
   useSeed: 1
   seed: 241512
-  firstLoad: 0
+  firstLoad: 1

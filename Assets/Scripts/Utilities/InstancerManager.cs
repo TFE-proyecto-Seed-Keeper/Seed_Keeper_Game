@@ -12,7 +12,6 @@ public class InstancerManager : MonoBehaviour
         if (_instanceManager == null)
         {
             _instanceManager = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {

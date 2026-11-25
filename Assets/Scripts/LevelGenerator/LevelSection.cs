@@ -54,7 +54,10 @@ public class LevelSection : MonoBehaviour
 
     private void OnEnable()
     {
-        startTrigger.TeleportEvent += TeleportToPreviousSection;
+        if (startTrigger)
+        {
+            startTrigger.TeleportEvent += TeleportToPreviousSection;
+        }
 
         if (hasEndPath)
         {
@@ -79,7 +82,9 @@ public class LevelSection : MonoBehaviour
     {
 
         if(startTrigger)
-        startTrigger.TeleportEvent -= TeleportToNextSection;
+        {
+            startTrigger.TeleportEvent -= TeleportToNextSection;
+        }
 
         if (hasEndPath)
         {
