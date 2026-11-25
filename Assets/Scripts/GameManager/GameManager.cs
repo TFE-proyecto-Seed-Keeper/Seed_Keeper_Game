@@ -10,8 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     CinemachineBrain cinemachineBrain;
 
-    [SerializeField]
-    GameObject player;
+     GameObject player;
 
     [SerializeField]
     Transform[] playerSpawnPoints;
@@ -25,13 +24,19 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     bool testMode = false;
 
-    private void Awake()
+    private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+
+        var controller = player.GetComponent<CharacterController>();
+        controller.enabled = false;
+
         if (gameSettings.firstLoad)
         {
             print("First load");
             gameSettings.firstLoad = false;
-            player.transform.position = playerSpawnPoints[0].position;            
+            
+            player.transform.position = playerSpawnPoints[0].position;
         }
         else
         {
@@ -39,12 +44,10 @@ public class GameManager : MonoBehaviour
             player.transform.position = playerSpawnPoints[1].position;
             OnSecondLoad.Invoke();
         }
+
+        controller.enabled = true;
     }
 
-    private void Start()
-    {
-        //Invoke(nameof(SetGameSettings), 1f);
-    }
 
     private void SetGameSettings()
     {
