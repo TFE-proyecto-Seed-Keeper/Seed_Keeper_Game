@@ -142,10 +142,16 @@ public class LevelSection : MonoBehaviour
         }
         else
         {
+            HealthSystem healthSystem = player.GetComponent<HealthSystem>();
             CharacterController cc = player.GetComponent<CharacterController>();
+
+            healthSystem.enabled = false;
             cc.enabled = false;
+
             player.transform.position = getPosition(newSection);
+
             cc.enabled = true;
+            healthSystem.enabled = true;
 
             newSection.gameObject.SetActive(true);
         }
