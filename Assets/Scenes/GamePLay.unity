@@ -15033,6 +15033,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 90705b318a9d93442b513ca1a74b5197, type: 2}
+        m_TargetAssemblyTypeName: PlayerHealthSO, Assembly-CSharp
+        m_MethodName: Initialize
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   timeDelay: 1.5
 --- !u!1001 &597296442
 PrefabInstance:
@@ -60233,6 +60245,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6768330399238781409, guid: 09830e63230bb5f4381d6a79887814a3, type: 3}
+      propertyPath: OnInputDetected.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1880416060}
+    - target: {fileID: 8313080252827177952, guid: 09830e63230bb5f4381d6a79887814a3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1880416060}
     - target: {fileID: 9054098170569966508, guid: 09830e63230bb5f4381d6a79887814a3, type: 3}
       propertyPath: m_Name
       value: UI_Systems

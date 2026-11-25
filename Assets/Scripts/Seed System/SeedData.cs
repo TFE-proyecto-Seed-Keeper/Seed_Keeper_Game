@@ -8,6 +8,14 @@ public class SeedData : ScriptableObject
 {
     public List<Seed> seedList;
 
+    public void ResetAllSeedCount()
+    {
+        foreach (var seed in seedList)
+        {
+            seed.ResetSeedCount();
+        }
+    }
+
     public enum seedType
     {
       ceiba,
@@ -25,5 +33,10 @@ public class Seed
     public Sprite seedSprite;
 
     public SeedData.seedType seedType;
+
+    public void ResetSeedCount()
+    {
+        seedcount = 0;
+    }
 
 }

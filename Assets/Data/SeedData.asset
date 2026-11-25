@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SeedData
   seedList:
   - name: Semilla de Ceiba
-    seedcount: 0
+    seedcount: 90
     seedSprite: {fileID: -247767426, guid: 01b047419f79b7d4d8953741feb1f561, type: 3}
     seedType: 0
   - name: Semilla de Flor morado
@@ -22,6 +22,6 @@ MonoBehaviour:
     seedSprite: {fileID: -1853377327, guid: 01b047419f79b7d4d8953741feb1f561, type: 3}
     seedType: 1
   - name: Semilla de Totumo
-    seedcount: 0
+    seedcount: 5
     seedSprite: {fileID: -1050402518, guid: 01b047419f79b7d4d8953741feb1f561, type: 3}
     seedType: 2
